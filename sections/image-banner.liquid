@@ -1,12 +1,10 @@
 {%- style -%}
   .banner.premium-hero {
-    min-height: 100vh !important;
+    min-height: 80vh !important;
     background: var(--gradient-hero) !important;
     display: flex !important;
     align-items: center !important;
-    justify-content: center !important;
-    text-align: center !important;
-    padding: 140px 20px 100px !important;
+    padding: 120px 0 80px !important;
     position: relative;
     overflow: hidden;
   }
@@ -18,9 +16,31 @@
     left: 50%;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle at 50% 20%, rgba(99, 102, 241, 0.05), transparent 50%);
+    background: radial-gradient(circle at 50% 20%, rgba(45, 90, 39, 0.05), transparent 50%);
     transform: translateX(-50%);
     pointer-events: none;
+  }
+
+  .premium-hero .hero-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+
+  .premium-hero .hero-content {
+    text-align: left;
+    z-index: 2;
+  }
+
+  .premium-hero.hero-centered .hero-grid {
+    grid-template-columns: 1fr;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .premium-hero.hero-centered .hero-content {
+    text-align: center;
   }
 
   .hero-badge {
@@ -28,11 +48,11 @@
     align-items: center;
     gap: 8px;
     padding: 8px 20px;
-    background: rgba(99, 102, 241, 0.05);
-    border: 1px solid rgba(99, 102, 241, 0.1);
+    background: rgba(45, 90, 39, 0.05);
+    border: 1px solid rgba(45, 90, 39, 0.1);
     border-radius: var(--radius-pill);
     font-size: 14px;
-    font-weight: 500;
+    font-weight: 600;
     color: var(--color-brand-1);
     margin-bottom: 32px;
     animation: fadeInUp 0.8s ease forwards;
@@ -51,10 +71,9 @@
     font-size: var(--text-hero) !important;
     font-weight: 800 !important;
     letter-spacing: -0.04em !important;
-    line-height: 1.05 !important;
+    line-height: 1.1 !important;
     color: var(--text-primary) !important;
-    max-width: 900px !important;
-    margin: 0 auto 24px !important;
+    margin-bottom: 24px !important;
     animation: fadeInUp 0.8s ease 0.1s forwards;
     opacity: 0;
   }
@@ -63,14 +82,12 @@
     background: var(--text-vibrant);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-style: italic;
   }
 
   .banner__text {
     font-size: 20px !important;
     color: var(--text-secondary) !important;
-    max-width: 600px !important;
-    margin: 0 auto 48px !important;
+    margin-bottom: 48px !important;
     line-height: 1.6 !important;
     animation: fadeInUp 0.8s ease 0.2s forwards;
     opacity: 0;
@@ -78,413 +95,226 @@
 
   .banner__buttons {
     display: flex !important;
-    gap: 20px !important;
-    justify-content: center !important;
+    gap: 16px !important;
     animation: fadeInUp 0.8s ease 0.3s forwards;
     opacity: 0;
   }
 
-  .button--primary-hero {
-    background: var(--gradient-brand) !important;
-    color: #ffffff !important;
-    border: none !important;
-    padding: 18px 36px !important;
-    border-radius: var(--radius-pill) !important;
-    font-weight: 600 !important;
-    font-size: 16px !important;
-    display: flex !important;
-    align-items: center !important;
-    gap: 10px !important;
-    transition: var(--transition-spring) !important;
+  .premium-hero.hero-centered .banner__buttons {
+    justify-content: center;
   }
 
-  .button--primary-hero:hover {
-    transform: translateY(-4px) scale(1.02);
-    box-shadow: 0 15px 30px rgba(99, 102, 241, 0.2);
+  .hero-image-container {
+    position: relative;
+    z-index: 1;
+    animation: fadeInScale 1s ease 0.2s forwards;
+    opacity: 0;
   }
 
-  .button--secondary-hero {
-    background: transparent !important;
-    color: var(--text-primary) !important;
-    border: 1px solid #e2e8f0 !important;
-    padding: 18px 36px !important;
-    border-radius: var(--radius-pill) !important;
-    font-weight: 600 !important;
-    font-size: 16px !important;
-    display: flex !important;
-    align-items: center !important;
-    gap: 10px !important;
-    transition: var(--transition-spring) !important;
+  .hero-image-card {
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 12px;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    position: relative;
+    overflow: hidden;
   }
 
-  .button--secondary-hero:hover {
-    background: #f8fafc !important;
-    border-color: #cbd5e1 !important;
-    transform: translateY(-4px);
+  .hero-image-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+    display: block;
+  }
+
+  .floating-element {
+    position: absolute;
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 16px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    z-index: 2;
+    animation: floatY 4s ease-in-out infinite;
+  }
+
+  .floating-1 { top: 10%; left: -10%; animation-delay: 0s; }
+  .floating-2 { bottom: 15%; right: -5%; animation-delay: 1s; }
+
+  @media screen and (max-width: 989px) {
+    .premium-hero .hero-grid {
+      grid-template-columns: 1fr;
+      text-align: center;
+      gap: 40px;
+    }
+    .premium-hero .hero-content {
+      text-align: center;
+    }
+    .banner__buttons {
+      justify-content: center;
+    }
+    .banner__heading {
+      font-size: 48px !important;
+    }
+    .floating-element {
+        display: none;
+    }
   }
 {%- endstyle -%}
 
-<div id="Banner-{{ section.id }}" class="banner premium-hero">
-  <div class="banner__content page-width">
-    <div class="hero-badge">
-      <span>Trusted by merchants worldwide</span>
-    </div>
-    
-    <h2 class="banner__heading">
-      Supercharge Your <span class="highlight">E-commerce</span> Growth Today
-    </h2>
+<div id="Banner-{{ section.id }}" class="banner premium-hero {% if section.settings.image == blank %}hero-centered{% endif %}">
+  <div class="page-width">
+    <div class="hero-grid">
+      <div class="hero-content">
+        {%- if section.settings.hero_badge != blank -%}
+          <div class="hero-badge">
+            <span>{{ section.settings.hero_badge }}</span>
+          </div>
+        {%- endif -%}
+        
+        {%- for block in section.blocks -%}
+          {%- case block.type -%}
+            {%- when 'heading' -%}
+              <h1 class="banner__heading" {{ block.shopify_attributes }}>
+                {{ block.settings.heading }}
+              </h1>
+            {%- when 'text' -%}
+              <div class="banner__text" {{ block.shopify_attributes }}>
+                {{ block.settings.text }}
+              </div>
+            {%- when 'buttons' -%}
+              <div class="banner__buttons" {{ block.shopify_attributes }}>
+                {%- if block.settings.button_label_1 != blank -%}
+                  <a href="{{ block.settings.button_link_1 }}" class="button button--primary">
+                    {{ block.settings.button_label_1 }} <span>→</span>
+                  </a>
+                {%- endif -%}
+                {%- if block.settings.button_label_2 != blank -%}
+                  <a href="{{ block.settings.button_link_2 }}" class="button button--secondary">
+                    {{ block.settings.button_label_2 }}
+                  </a>
+                {%- endif -%}
+              </div>
+          {%- endcase -%}
+        {%- endfor -%}
+      </div>
 
-    <div class="banner__text">
-      The all-in-one toolkit designed to automate your workflows, increase average order value, and scale your brand effortlessly.
-    </div>
+      {%- if section.settings.image != blank -%}
+        <div class="hero-image-container">
+          <div class="hero-image-card">
+            {{ section.settings.image | image_url: width: 1200 | image_tag: loading: 'lazy' }}
+          </div>
+          
+          <div class="floating-element floating-1">
+            <div style="width: 32px; height: 32px; background: #f0f4f0; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #2d5a27;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+            </div>
+            <div>
+              <div style="font-weight: 700; font-size: 14px; color: #1e291e;">Accurate Rates</div>
+              <div style="font-size: 12px; color: #4a5a4a;">Real-time sync</div>
+            </div>
+          </div>
 
-    {% comment %} <div class="banner__buttons">
-      <a href="/collections/all" class="button--primary-hero">
-        Get Started Free <span>→</span>
-      </a>
-      <a href="#demo" class="button--secondary-hero">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
-        Watch Demo
-      </a>
-    </div> {% endcomment %}
+          <div class="floating-element floating-2">
+             <div style="width: 32px; height: 32px; background: #f0f4f0; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #2d5a27;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+            </div>
+            <div>
+              <div style="font-weight: 700; font-size: 14px; color: #1e291e;">Smart Packing</div>
+              <div style="font-size: 12px; color: #4a5a4a;">AI 3D Logic</div>
+            </div>
+          </div>
+        </div>
+      {%- endif -%}
+    </div>
   </div>
 </div>
-
 
 {% schema %}
 {
   "name": "t:sections.image-banner.name",
   "tag": "section",
   "class": "section",
-  "disabled_on": {
-    "groups": ["header", "footer"]
-  },
   "settings": [
+    {
+      "type": "text",
+      "id": "hero_badge",
+      "label": "Hero Badge Text",
+      "default": "Trusted by merchants worldwide"
+    },
     {
       "type": "image_picker",
       "id": "image",
-      "label": "t:sections.image-banner.settings.image.label"
-    },
-    {
-      "type": "image_picker",
-      "id": "image_2",
-      "label": "t:sections.image-banner.settings.image_2.label"
-    },
-    {
-      "type": "range",
-      "id": "image_overlay_opacity",
-      "min": 0,
-      "max": 100,
-      "step": 10,
-      "unit": "%",
-      "label": "t:sections.image-banner.settings.image_overlay_opacity.label",
-      "default": 0
-    },
-    {
-      "type": "select",
-      "id": "image_height",
-      "options": [
-        {
-          "value": "adapt",
-          "label": "t:sections.image-banner.settings.image_height.options__1.label"
-        },
-        {
-          "value": "small",
-          "label": "t:sections.image-banner.settings.image_height.options__2.label"
-        },
-        {
-          "value": "medium",
-          "label": "t:sections.image-banner.settings.image_height.options__3.label"
-        },
-        {
-          "value": "large",
-          "label": "t:sections.image-banner.settings.image_height.options__4.label"
-        }
-      ],
-      "default": "medium",
-      "label": "t:sections.image-banner.settings.image_height.label"
-    },
-    {
-      "type": "select",
-      "id": "image_behavior",
-      "options": [
-        {
-          "value": "none",
-          "label": "t:sections.all.animation.image_behavior.options__1.label"
-        },
-        {
-          "value": "ambient",
-          "label": "t:sections.all.animation.image_behavior.options__2.label"
-        },
-        {
-          "value": "fixed",
-          "label": "t:sections.all.animation.image_behavior.options__3.label"
-        },
-        {
-          "value": "zoom-in",
-          "label": "t:sections.all.animation.image_behavior.options__4.label"
-        }
-      ],
-      "default": "none",
-      "label": "t:sections.all.animation.image_behavior.label"
-    },
-    {
-      "type": "header",
-      "content": "t:sections.image-banner.settings.content.content"
-    },
-    {
-      "type": "select",
-      "id": "desktop_content_position",
-      "options": [
-        {
-          "value": "top-left",
-          "label": "t:sections.image-banner.settings.desktop_content_position.options__1.label"
-        },
-        {
-          "value": "top-center",
-          "label": "t:sections.image-banner.settings.desktop_content_position.options__2.label"
-        },
-        {
-          "value": "top-right",
-          "label": "t:sections.image-banner.settings.desktop_content_position.options__3.label"
-        },
-        {
-          "value": "middle-left",
-          "label": "t:sections.image-banner.settings.desktop_content_position.options__4.label"
-        },
-        {
-          "value": "middle-center",
-          "label": "t:sections.image-banner.settings.desktop_content_position.options__5.label"
-        },
-        {
-          "value": "middle-right",
-          "label": "t:sections.image-banner.settings.desktop_content_position.options__6.label"
-        },
-        {
-          "value": "bottom-left",
-          "label": "t:sections.image-banner.settings.desktop_content_position.options__7.label"
-        },
-        {
-          "value": "bottom-center",
-          "label": "t:sections.image-banner.settings.desktop_content_position.options__8.label"
-        },
-        {
-          "value": "bottom-right",
-          "label": "t:sections.image-banner.settings.desktop_content_position.options__9.label"
-        }
-      ],
-      "default": "middle-center",
-      "label": "t:sections.image-banner.settings.desktop_content_position.label"
-    },
-    {
-      "type": "select",
-      "id": "desktop_content_alignment",
-      "options": [
-        {
-          "value": "left",
-          "label": "t:sections.image-banner.settings.desktop_content_alignment.options__1.label"
-        },
-        {
-          "value": "center",
-          "label": "t:sections.image-banner.settings.desktop_content_alignment.options__2.label"
-        },
-        {
-          "value": "right",
-          "label": "t:sections.image-banner.settings.desktop_content_alignment.options__3.label"
-        }
-      ],
-      "default": "center",
-      "label": "t:sections.image-banner.settings.desktop_content_alignment.label"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_text_box",
-      "default": true,
-      "label": "t:sections.image-banner.settings.show_text_box.label"
-    },
-    {
-      "type": "color_scheme",
-      "id": "color_scheme",
-      "label": "t:sections.all.colors.label",
-      "default": "scheme-1"
-    },
-    {
-      "type": "header",
-      "content": "t:sections.image-banner.settings.mobile.content"
-    },
-    {
-      "type": "checkbox",
-      "id": "stack_images_on_mobile",
-      "default": true,
-      "label": "t:sections.image-banner.settings.stack_images_on_mobile.label"
-    },    
-    {
-      "type": "select",
-      "id": "mobile_content_alignment",
-      "options": [
-        {
-          "value": "left",
-          "label": "t:sections.image-banner.settings.mobile_content_alignment.options__1.label"
-        },
-        {
-          "value": "center",
-          "label": "t:sections.image-banner.settings.mobile_content_alignment.options__2.label"
-        },
-        {
-          "value": "right",
-          "label": "t:sections.image-banner.settings.mobile_content_alignment.options__3.label"
-        }
-      ],
-      "default": "center",
-      "label": "t:sections.image-banner.settings.mobile_content_alignment.label"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_text_below",
-      "default": true,
-      "label": "t:sections.image-banner.settings.show_text_below.label"
+      "label": "Hero Image (Split Layout)"
     }
   ],
   "blocks": [
     {
       "type": "heading",
-      "name": "t:sections.image-banner.blocks.heading.name",
+      "name": "Heading",
       "limit": 1,
       "settings": [
         {
           "type": "inline_richtext",
           "id": "heading",
-          "default": "t:sections.image-banner.blocks.heading.settings.heading.default",
-          "label": "t:sections.image-banner.blocks.heading.settings.heading.label"
-        },
-        {
-          "type": "select",
-          "id": "heading_size",
-          "options": [
-            {
-              "value": "h2",
-              "label": "t:sections.all.heading_size.options__1.label"
-            },
-            {
-              "value": "h1",
-              "label": "t:sections.all.heading_size.options__2.label"
-            },
-            {
-              "value": "h0",
-              "label": "t:sections.all.heading_size.options__3.label"
-            },
-            {
-              "value": "hxl",
-              "label": "t:sections.all.heading_size.options__4.label"
-            },
-            {
-              "value": "hxxl",
-              "label": "t:sections.all.heading_size.options__5.label"
-            }
-          ],
-          "default": "h1",
-          "label": "t:sections.all.heading_size.label"
+          "default": "Scale Your Store with Premium Solutions",
+          "label": "Heading"
         }
       ]
     },
     {
       "type": "text",
-      "name": "t:sections.image-banner.blocks.text.name",
+      "name": "Text",
       "limit": 1,
       "settings": [
         {
-          "type": "inline_richtext",
+          "type": "textarea",
           "id": "text",
-          "default": "t:sections.image-banner.blocks.text.settings.text.default",
-          "label": "t:sections.image-banner.blocks.text.settings.text.label"
-        },
-        {
-          "type": "select",
-          "id": "text_style",
-          "options": [
-            {
-              "value": "body",
-              "label": "t:sections.image-banner.blocks.text.settings.text_style.options__1.label"
-            },
-            {
-              "value": "subtitle",
-              "label": "t:sections.image-banner.blocks.text.settings.text_style.options__2.label"
-            },
-            {
-              "value": "caption-with-letter-spacing",
-              "label": "t:sections.image-banner.blocks.text.settings.text_style.options__3.label"
-            }
-          ],
-          "default": "body",
-          "label": "t:sections.image-banner.blocks.text.settings.text_style.label"
+          "default": "The ultimate Shopify app for merchants who demand high conversion.",
+          "label": "Description"
         }
       ]
     },
     {
       "type": "buttons",
-      "name": "t:sections.image-banner.blocks.buttons.name",
+      "name": "Buttons",
       "limit": 1,
       "settings": [
         {
-        "type": "header",
-        "content": "t:sections.image-banner.blocks.buttons.settings.header_1.content"
-        },
-        {
           "type": "text",
           "id": "button_label_1",
-          "default": "t:sections.image-banner.blocks.buttons.settings.button_label_1.default",
-          "label": "t:sections.image-banner.blocks.buttons.settings.button_label_1.label",
-          "info": "t:sections.image-banner.blocks.buttons.settings.button_label_1.info"
+          "default": "Get Started",
+          "label": "First Button Label"
         },
         {
           "type": "url",
           "id": "button_link_1",
-          "label": "t:sections.image-banner.blocks.buttons.settings.button_link_1.label"
-        },
-        {
-          "type": "checkbox",
-          "id": "button_style_secondary_1",
-          "default": false,
-          "label": "t:sections.image-banner.blocks.buttons.settings.button_style_secondary_1.label"
-        },
-        {
-        "type": "header",
-        "content": "t:sections.image-banner.blocks.buttons.settings.header_2.content"
+          "label": "First Button Link"
         },
         {
           "type": "text",
           "id": "button_label_2",
-          "default": "t:sections.image-banner.blocks.buttons.settings.button_label_2.default",
-          "label": "t:sections.image-banner.blocks.buttons.settings.button_label_2.label",
-          "info": "t:sections.image-banner.blocks.buttons.settings.button_label_2.info"
+          "default": "View Demo",
+          "label": "Second Button Label"
         },
         {
           "type": "url",
           "id": "button_link_2",
-          "label": "t:sections.image-banner.blocks.buttons.settings.button_link_2.label"
-        },
-        {
-          "type": "checkbox",
-          "id": "button_style_secondary_2",
-          "default": false,
-          "label": "t:sections.image-banner.blocks.buttons.settings.button_style_secondary_2.label"
+          "label": "Second Button Link"
         }
       ]
     }
   ],
   "presets": [
     {
-      "name": "t:sections.image-banner.presets.name",
+      "name": "t:sections.image-banner.presets__1.name",
       "blocks": [
-        {
-          "type": "heading"
-        },
-        {
-          "type": "text"
-        },
-        {
-          "type": "buttons"
-        }
+        { "type": "heading" },
+        { "type": "text" },
+        { "type": "buttons" }
       ]
     }
   ]

@@ -8,7 +8,7 @@
   }
   .saas-features .section-label {
     display: block;
-    color: #6366f1 !important;
+    color: var(--color-brand-1) !important;
     font-size: 14px !important;
     font-weight: 700 !important;
     text-transform: uppercase !important;
@@ -21,76 +21,119 @@
     letter-spacing: -0.03em !important;
     color: var(--text-primary) !important;
   }
-  .saas-features-grid {
+  
+  /* Bento Grid Layout */
+  .saas-features-bento {
     display: grid !important;
-    grid-template-columns: repeat(4, 1fr) !important;
-    gap: 32px !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    grid-template-rows: repeat(2, minmax(280px, auto)) !important;
+    gap: 24px !important;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
   }
+
   .saas-feature-card {
     background: #ffffff !important;
     border: 1px solid #f1f5f9 !important;
-    border-radius: 20px !important;
-    padding: 32px !important;
+    border-radius: 24px !important;
+    padding: 40px !important;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02) !important;
     transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
-    text-align: left !important;
     display: flex !important;
     flex-direction: column !important;
-    align-items: flex-start !important;
-    height: 100% !important;
+    position: relative;
+    overflow: hidden;
   }
+
+  /* Bento Sizes */
+  .saas-feature-card.size-large {
+    grid-column: span 2 !important;
+  }
+  .saas-feature-card.size-tall {
+    grid-row: span 2 !important;
+  }
+
   .saas-feature-card:hover {
     transform: translateY(-8px) !important;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05) !important;
-    border-color: #e2e8f0 !important;
+    border-color: rgba(45, 90, 39, 0.2) !important;
   }
+
   .saas-feature-icon {
-    width: 48px !important;
-    height: 48px !important;
-    background: #f5f3ff !important;
-    border-radius: 12px !important;
+    width: 56px !important;
+    height: 56px !important;
+    background: #f0f4f0 !important;
+    border-radius: 16px !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
-    margin-bottom: 24px !important;
-    color: #6366f1 !important;
+    margin-bottom: 32px !important;
+    color: var(--color-brand-1) !important;
     flex-shrink: 0 !important;
+    transition: transform 0.3s ease;
   }
+
+  .saas-feature-card:hover .saas-feature-icon {
+    transform: scale(1.1) rotate(5deg);
+  }
+
   .saas-feature-title {
-    font-size: 18px !important;
+    font-size: 22px !important;
     font-weight: 700 !important;
     color: var(--text-primary) !important;
-    margin-bottom: 12px !important;
+    margin-bottom: 16px !important;
   }
+
   .saas-feature-text {
-    font-size: 15px !important;
+    font-size: 16px !important;
     color: var(--text-secondary) !important;
     line-height: 1.6 !important;
     margin: 0 !important;
-    flex-grow: 1 !important;
   }
+
   @media screen and (max-width: 989px) {
-    .saas-features-grid {
+    .saas-features-bento {
       grid-template-columns: repeat(2, 1fr) !important;
+      grid-template-rows: auto !important;
+    }
+    .saas-feature-card.size-large {
+      grid-column: span 2 !important;
     }
   }
+
   @media screen and (max-width: 749px) {
-    .saas-features-grid {
+    .saas-features-bento {
       grid-template-columns: 1fr !important;
+    }
+    .saas-feature-card.size-large,
+    .saas-feature-card.size-tall {
+      grid-column: span 1 !important;
+      grid-row: span 1 !important;
+    }
+    .saas-feature-card {
+        padding: 32px !important;
     }
   }
 {%- endstyle -%}
 
-<section class="saas-features">
+<section class="saas-features" id="features">
   <div class="page-width">
     <div class="collection__title center">
       <span class="section-label">Features</span>
-      <h2 class="title">Everything you need to grow</h2>
+      <h2 class="title">{{ section.settings.title }}</h2>
     </div>
 
-    <div class="saas-features-grid">
+    <div class="saas-features-bento">
       {%- for block in section.blocks -%}
-        <div class="saas-feature-card" {{ block.shopify_attributes }}>
+        {%- liquid
+          assign size_class = ''
+          if block.settings.size == 'large'
+            assign size_class = 'size-large'
+          elsif block.settings.size == 'tall'
+            assign size_class = 'size-tall'
+          endif
+        -%}
+        <div class="saas-feature-card {{ size_class }}" {{ block.shopify_attributes }}>
           <div class="saas-feature-icon">
             {%- if block.settings.icon_svg != blank -%}
               {{ block.settings.icon_svg }}
@@ -100,6 +143,12 @@
           </div>
           <h3 class="saas-feature-title">{{ block.settings.title }}</h3>
           <p class="saas-feature-text">{{ block.settings.text }}</p>
+          
+          {%- if block.settings.size == 'large' -%}
+             <div style="position: absolute; bottom: -20px; right: -20px; opacity: 0.05; transform: rotate(-15deg);">
+                 <svg width="200" height="200" viewBox="0 0 24 24" fill="currentColor"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg>
+             </div>
+          {%- endif -%}
         </div>
       {%- endfor -%}
     </div>
@@ -115,24 +164,8 @@
     {
       "type": "inline_richtext",
       "id": "title",
-      "default": "Built for Modern Merchants",
+      "default": "Everything you need to grow",
       "label": "Heading"
-    },
-    {
-      "type": "select",
-      "id": "heading_size",
-      "options": [
-        { "value": "h2", "label": "Small" },
-        { "value": "h1", "label": "Medium" },
-        { "value": "h0", "label": "Large" }
-      ],
-      "default": "h1",
-      "label": "Heading size"
-    },
-    {
-      "type": "richtext",
-      "id": "description",
-      "label": "Description"
     }
   ],
   "blocks": [
@@ -141,9 +174,20 @@
       "name": "Feature",
       "settings": [
         {
+          "type": "select",
+          "id": "size",
+          "label": "Card Size",
+          "options": [
+            { "value": "standard", "label": "Standard" },
+            { "value": "large", "label": "Wide (2 columns)" },
+            { "value": "tall", "label": "Tall (2 rows)" }
+          ],
+          "default": "standard"
+        },
+        {
           "type": "html",
           "id": "icon_svg",
-          "label": "Icon SVG (Optional)"
+          "label": "Icon SVG"
         },
         {
           "type": "text",
@@ -154,7 +198,7 @@
         {
           "type": "textarea",
           "id": "text",
-          "default": "Explain how this feature helps your customers achieve their goals.",
+          "default": "Explain how this feature helps your customers.",
           "label": "Description"
         }
       ]
@@ -164,9 +208,10 @@
     {
       "name": "SaaS Features",
       "blocks": [
+        { "type": "feature", "settings": { "size": "large" } },
         { "type": "feature" },
         { "type": "feature" },
-        { "type": "feature" }
+        { "type": "feature", "settings": { "size": "tall" } }
       ]
     }
   ]

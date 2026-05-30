@@ -1,14 +1,14 @@
 {%- style -%}
   .saas-showcase {
     padding: var(--space-12) 0 !important;
-    background: #ffffff !important;
+    background: #f8faf8 !important; /* Subtle background for contrast */
   }
   .saas-showcase .collection__title {
-    margin-bottom: 64px !important;
+    margin-bottom: 80px !important;
   }
   .saas-showcase .section-label {
     display: block;
-    color: #6366f1 !important;
+    color: var(--color-brand-1) !important;
     font-size: 14px !important;
     font-weight: 700 !important;
     text-transform: uppercase !important;
@@ -21,81 +21,102 @@
     letter-spacing: -0.03em !important;
     color: var(--text-primary) !important;
   }
-  .saas-showcase-grid {
+
+  .saas-showcase-item {
     display: grid !important;
-    grid-template-columns: repeat(3, 1fr) !important;
-    gap: 32px !important;
-  }
-  .saas-showcase-card {
-    background: #ffffff !important;
-    border: 1px solid #f1f5f9 !important;
-    border-radius: 20px !important;
-    padding: 0 !important;
-    display: flex !important;
-    flex-direction: column !important;
-    overflow: hidden !important;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02) !important;
-    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
-    height: 100% !important;
-  }
-  .saas-showcase-card:hover {
-    transform: translateY(-8px) !important;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05) !important;
-  }
-  .saas-showcase-image {
-    height: 200px !important;
-    background: #f8fafc !important;
-    display: flex !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 80px !important;
     align-items: center !important;
-    justify-content: center !important;
-    position: relative !important;
-    overflow: hidden !important;
-    border-bottom: 1px solid #f1f5f9 !important;
+    margin-bottom: 120px !important;
   }
+
+  .saas-showcase-item:last-child {
+    margin-bottom: 0 !important;
+  }
+
+  .saas-showcase-item.reverse {
+    direction: rtl !important;
+  }
+  .saas-showcase-item.reverse .saas-showcase-content {
+    direction: ltr !important;
+  }
+
+  .saas-showcase-image-wrapper {
+    position: relative !important;
+  }
+
+  .saas-showcase-image {
+    background: #ffffff !important;
+    border-radius: 24px !important;
+    padding: 12px !important;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08) !important;
+    border: 1px solid rgba(0, 0, 0, 0.03) !important;
+    overflow: hidden !important;
+  }
+
   .saas-showcase-image img {
     width: 100% !important;
-    height: 100% !important;
-    object-fit: cover !important;
-    transition: transform 0.8s ease;
+    height: auto !important;
+    border-radius: 16px !important;
+    display: block !important;
+    transition: transform 0.6s ease;
   }
+
+  .saas-showcase-item:hover .saas-showcase-image img {
+    transform: scale(1.02);
+  }
+
   .saas-showcase-content {
-    padding: 24px !important;
-    text-align: left !important;
-    flex-grow: 1 !important;
-    display: flex !important;
-    flex-direction: column !important;
+    max-width: 480px !important;
   }
+
   .saas-showcase-title {
-    font-size: 20px !important;
-    font-weight: 700 !important;
+    font-size: 32px !important;
+    font-weight: 800 !important;
     color: var(--text-primary) !important;
-    margin-bottom: 12px !important;
+    margin-bottom: 24px !important;
+    line-height: 1.2 !important;
   }
+
   .saas-showcase-text {
-    font-size: 15px !important;
+    font-size: 18px !important;
     color: var(--text-secondary) !important;
-    line-height: 1.6 !important;
-    margin-bottom: 20px !important;
-    flex-grow: 1 !important;
+    line-height: 1.7 !important;
+    margin-bottom: 32px !important;
   }
+
   .saas-showcase-link {
-    color: #6366f1 !important;
-    font-weight: 600 !important;
-    font-size: 15px !important;
+    color: var(--color-brand-1) !important;
+    font-weight: 700 !important;
+    font-size: 16px !important;
     text-decoration: none !important;
     display: inline-flex !important;
     align-items: center !important;
-    gap: 8px !important;
+    gap: 10px !important;
+    transition: all 0.3s ease !important;
   }
+
   .saas-showcase-link span {
     transition: transform 0.3s ease;
   }
-  .saas-showcase-card:hover .saas-showcase-link span {
-    transform: translateX(5px);
+
+  .saas-showcase-link:hover {
+    gap: 15px !important;
   }
+
   @media screen and (max-width: 989px) {
-    .saas-showcase-grid {
+    .saas-showcase-item {
       grid-template-columns: 1fr !important;
+      gap: 48px !important;
+      text-align: center !important;
+      margin-bottom: 80px !important;
+    }
+    .saas-showcase-item.reverse {
+      direction: ltr !important;
+    }
+    .saas-showcase-content {
+      max-width: 100% !important;
+      margin: 0 auto !important;
     }
   }
 {%- endstyle -%}
@@ -103,27 +124,31 @@
 <section class="saas-showcase">
   <div class="page-width">
     <div class="collection__title center">
-      <span class="section-label">Use Cases</span>
-      <h2 class="title">Built for modern commerce</h2>
+      <span class="section-label">Showcase</span>
+      <h2 class="title">{{ section.settings.title }}</h2>
     </div>
 
-    <div class="saas-showcase-grid">
+    <div class="saas-showcase-items">
       {%- for block in section.blocks -%}
-        <div class="saas-showcase-card" {{ block.shopify_attributes }}>
-          <div class="saas-showcase-image">
-            {%- if block.settings.image != blank -%}
-              {{ block.settings.image | image_url: width: 800 | image_tag: loading: 'lazy' }}
-            {%- else -%}
-              <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #f5f3ff, #ede9fe); display: flex; align-items: center; justify-content: center;">
-                <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#6366f1" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" opacity="0.3"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
-              </div>
-            {%- endif -%}
+        <div class="saas-showcase-item {% cycle '', 'reverse' %}" {{ block.shopify_attributes }}>
+          <div class="saas-showcase-image-wrapper">
+            <div class="saas-showcase-image">
+              {%- if block.settings.image != blank -%}
+                {{ block.settings.image | image_url: width: 1200 | image_tag: loading: 'lazy' }}
+              {%- else -%}
+                <div style="aspect-ratio: 16/10; background: linear-gradient(135deg, #f0f4f0, #ffffff); display: flex; align-items: center; justify-content: center;">
+                  <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" opacity="0.1"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+                </div>
+              {%- endif -%}
+            </div>
           </div>
           <div class="saas-showcase-content">
             <h3 class="saas-showcase-title">{{ block.settings.title }}</h3>
             <div class="saas-showcase-text">{{ block.settings.text }}</div>
             {%- if block.settings.button_label != blank -%}
-              <a href="{{ block.settings.button_link }}" class="saas-showcase-link">{{ block.settings.button_label }} <span>→</span></a>
+              <a href="{{ block.settings.button_link }}" class="saas-showcase-link">
+                {{ block.settings.button_label }} <span>→</span>
+              </a>
             {%- endif -%}
           </div>
         </div>
@@ -141,41 +166,30 @@
     {
       "type": "inline_richtext",
       "id": "title",
-      "default": "Everything You Need to Scale",
+      "default": "Built for modern commerce",
       "label": "Heading"
-    },
-    {
-      "type": "select",
-      "id": "heading_size",
-      "options": [
-        { "value": "h2", "label": "Small" },
-        { "value": "h1", "label": "Medium" },
-        { "value": "h0", "label": "Large" }
-      ],
-      "default": "h1",
-      "label": "Heading size"
     }
   ],
   "blocks": [
     {
       "type": "showcase",
-      "name": "Showcase Card",
+      "name": "Showcase Item",
       "settings": [
         {
           "type": "image_picker",
           "id": "image",
-          "label": "Showcase Image"
+          "label": "Feature Screenshot"
         },
         {
           "type": "text",
           "id": "title",
-          "default": "Powerful Analytics",
+          "default": "Feature Title",
           "label": "Title"
         },
         {
           "type": "richtext",
           "id": "text",
-          "default": "<p>Gain insights into your subscription growth with real-time dashboards and predictive reporting.</p>",
+          "default": "<p>Explain the benefit of this feature in detail.</p>",
           "label": "Description"
         },
         {
@@ -196,6 +210,7 @@
     {
       "name": "SaaS Showcase",
       "blocks": [
+        { "type": "showcase" },
         { "type": "showcase" }
       ]
     }
