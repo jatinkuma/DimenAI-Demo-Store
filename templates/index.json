@@ -90,7 +90,8 @@
         "s1": {
           "type": "showcase",
           "settings": {
-            "title": "Optimize Every Shipment",
+            "mock_type": "checkout",
+            "title": "Live Carrier Rates",
             "text": "<p>Stop guessing which box to use. DimenAI's AI engine calculates the most efficient packing strategy in milliseconds, saving you up to 30% on shipping costs.</p>",
             "button_label": "Explore Carriers →",
             "button_link": "https://apps.shopify.com/estsshipping"
@@ -99,16 +100,28 @@
         "s2": {
           "type": "showcase",
           "settings": {
-            "title": "Seamless Checkout Experience",
+            "mock_type": "packing",
+            "title": "Optimized 3D Packing",
             "text": "<p>Provide transparency to your customers with accurate, live shipping rates. No more undercharging or overcharging—just fair, real-time pricing from global carriers.</p>",
             "button_label": "See How it Works →",
+            "button_link": "https://apps.shopify.com/estsshipping"
+          }
+        },
+        "s3": {
+          "type": "showcase",
+          "settings": {
+            "mock_type": "dashboard",
+            "title": "Multi-Carrier Dashboard",
+            "text": "<p>Connect and manage all your shipping carriers in one centralized dashboard. Track performance, sync rates, and streamline your entire shipping operation.</p>",
+            "button_label": "Start Shipping →",
             "button_link": "https://apps.shopify.com/estsshipping"
           }
         }
       },
       "block_order": [
         "s1",
-        "s2"
+        "s2",
+        "s3"
       ],
       "settings": {
         "title": "The DimenAI Difference"

@@ -1,7 +1,7 @@
 {%- style -%}
   .saas-showcase {
     padding: var(--space-12) 0 !important;
-    background: #f8faf8 !important; /* Subtle background for contrast */
+    background: #f8faf8 !important;
   }
   .saas-showcase .collection__title {
     margin-bottom: 80px !important;
@@ -45,25 +45,101 @@
     position: relative !important;
   }
 
-  .saas-showcase-image {
+  /* Mock UI Styles */
+  .mock-ui-container {
     background: #ffffff !important;
     border-radius: 24px !important;
-    padding: 12px !important;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08) !important;
+    padding: 24px !important;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.08) !important;
     border: 1px solid rgba(0, 0, 0, 0.03) !important;
     overflow: hidden !important;
-  }
-
-  .saas-showcase-image img {
     width: 100% !important;
-    height: auto !important;
-    border-radius: 16px !important;
-    display: block !important;
-    transition: transform 0.6s ease;
+    aspect-ratio: 16/10 !important;
+    position: relative;
   }
 
-  .saas-showcase-item:hover .saas-showcase-image img {
-    transform: scale(1.02);
+  /* Mock Checkout UI */
+  .mock-checkout {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .mock-checkout-header {
+    font-weight: 700;
+    font-size: 16px;
+    margin-bottom: 8px;
+    color: #1e291e;
+  }
+  .mock-rate-item {
+    padding: 12px;
+    border: 1.5px solid #f0f4f0;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .mock-rate-item.selected {
+    border-color: var(--color-brand-1);
+    background: #f0f4f0;
+  }
+  .mock-rate-name {
+    font-size: 14px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .mock-rate-price {
+    font-weight: 700;
+    color: var(--color-brand-1);
+  }
+
+  /* Mock 3D Packing UI */
+  .mock-3d-box {
+    width: 200px;
+    height: 120px;
+    background: #e2e8e2;
+    margin: 40px auto;
+    position: relative;
+    transform: rotateX(20deg) rotateY(-20deg);
+    transform-style: preserve-3d;
+    border: 2px solid #cbd5cb;
+  }
+  .mock-item {
+    position: absolute;
+    background: var(--color-brand-1);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 10px;
+    font-weight: 700;
+  }
+
+  /* Mock Dashboard UI */
+  .mock-dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+  .mock-carrier-card {
+    padding: 16px;
+    border: 1px solid #f1f5f9;
+    border-radius: 16px;
+    text-align: center;
+  }
+  .mock-carrier-logo {
+    width: 40px;
+    height: 40px;
+    background: #f8fafc;
+    border-radius: 10px;
+    margin: 0 auto 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-brand-1);
   }
 
   .saas-showcase-content {
@@ -93,15 +169,6 @@
     display: inline-flex !important;
     align-items: center !important;
     gap: 10px !important;
-    transition: all 0.3s ease !important;
-  }
-
-  .saas-showcase-link span {
-    transition: transform 0.3s ease;
-  }
-
-  .saas-showcase-link:hover {
-    gap: 15px !important;
   }
 
   @media screen and (max-width: 989px) {
@@ -109,14 +176,9 @@
       grid-template-columns: 1fr !important;
       gap: 48px !important;
       text-align: center !important;
-      margin-bottom: 80px !important;
     }
     .saas-showcase-item.reverse {
       direction: ltr !important;
-    }
-    .saas-showcase-content {
-      max-width: 100% !important;
-      margin: 0 auto !important;
     }
   }
 {%- endstyle -%}
@@ -132,15 +194,67 @@
       {%- for block in section.blocks -%}
         <div class="saas-showcase-item {% cycle '', 'reverse' %}" {{ block.shopify_attributes }}>
           <div class="saas-showcase-image-wrapper">
-            <div class="saas-showcase-image">
-              {%- if block.settings.image != blank -%}
-                {{ block.settings.image | image_url: width: 1200 | image_tag: loading: 'lazy' }}
-              {%- else -%}
-                <div style="aspect-ratio: 16/10; background: linear-gradient(135deg, #f0f4f0, #ffffff); display: flex; align-items: center; justify-content: center;">
-                  <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" opacity="0.1"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
-                </div>
-              {%- endif -%}
-            </div>
+            {%- if block.settings.image != blank -%}
+              <div class="mock-ui-container">
+                {{ block.settings.image | image_url: width: 1200 | image_tag: loading: 'lazy', style: 'width: 100%; height: 100%; object-fit: cover; border-radius: 12px;' }}
+              </div>
+            {%- else -%}
+              <div class="mock-ui-container">
+                {%- case block.settings.mock_type -%}
+                  {%- when 'checkout' -%}
+                    <div class="mock-checkout">
+                      <div class="mock-checkout-header">Shipping Method</div>
+                      <div class="mock-rate-item selected">
+                        <div class="mock-rate-name">
+                          <div style="width: 20px; height: 20px; background: var(--color-brand-1); border-radius: 50%;"></div>
+                          UPS® Ground
+                        </div>
+                        <div class="mock-rate-price">$12.40</div>
+                      </div>
+                      <div class="mock-rate-item">
+                        <div class="mock-rate-name">
+                          <div style="width: 20px; height: 20px; border: 1.5px solid #cbd5cb; border-radius: 50%;"></div>
+                          FedEx International
+                        </div>
+                        <div class="mock-rate-price">$45.00</div>
+                      </div>
+                      <div class="mock-rate-item">
+                        <div class="mock-rate-name">
+                          <div style="width: 20px; height: 20px; border: 1.5px solid #cbd5cb; border-radius: 50%;"></div>
+                          USPS Priority Mail
+                        </div>
+                        <div class="mock-rate-price">$8.90</div>
+                      </div>
+                    </div>
+                  {%- when 'packing' -%}
+                    <div class="mock-3d-box">
+                      <div class="mock-item" style="width: 60px; height: 60px; top: 10px; left: 10px;">Item A</div>
+                      <div class="mock-item" style="width: 40px; height: 40px; top: 10px; left: 80px; background: #8CB38D;">Item B</div>
+                      <div class="mock-item" style="width: 100px; height: 30px; top: 80px; left: 10px; background: #5a8c5a;">Item C</div>
+                    </div>
+                    <div style="text-align: center; font-weight: 700; color: var(--color-brand-1); margin-top: 20px;">98% Space Efficiency</div>
+                  {%- when 'dashboard' -%}
+                    <div class="mock-dashboard-grid">
+                      <div class="mock-carrier-card">
+                        <div class="mock-carrier-logo">UPS</div>
+                        <div style="font-size: 12px; font-weight: 700;">Connected</div>
+                      </div>
+                      <div class="mock-carrier-card">
+                        <div class="mock-carrier-logo" style="color: #ff6b00;">FedEx</div>
+                        <div style="font-size: 12px; font-weight: 700;">Connected</div>
+                      </div>
+                      <div class="mock-carrier-card">
+                        <div class="mock-carrier-logo" style="color: #004b98;">USPS</div>
+                        <div style="font-size: 12px; font-weight: 700;">Connected</div>
+                      </div>
+                      <div class="mock-carrier-card">
+                        <div class="mock-carrier-logo" style="color: #e4002b;">DHL</div>
+                        <div style="font-size: 12px; font-weight: 700; color: #64748b;">Configure</div>
+                      </div>
+                    </div>
+                {%- endcase -%}
+              </div>
+            {%- endif -%}
           </div>
           <div class="saas-showcase-content">
             <h3 class="saas-showcase-title">{{ block.settings.title }}</h3>
@@ -176,9 +290,20 @@
       "name": "Showcase Item",
       "settings": [
         {
+          "type": "select",
+          "id": "mock_type",
+          "label": "Mock UI Type (If no image)",
+          "options": [
+            { "value": "checkout", "label": "Checkout Rates" },
+            { "value": "packing", "label": "3D Bin Packing" },
+            { "value": "dashboard", "label": "Carrier Dashboard" }
+          ],
+          "default": "checkout"
+        },
+        {
           "type": "image_picker",
           "id": "image",
-          "label": "Feature Screenshot"
+          "label": "Feature Screenshot (Overrides Mock UI)"
         },
         {
           "type": "text",
@@ -210,8 +335,9 @@
     {
       "name": "SaaS Showcase",
       "blocks": [
-        { "type": "showcase" },
-        { "type": "showcase" }
+        { "type": "showcase", "settings": { "mock_type": "checkout", "title": "Live Carrier Rates" } },
+        { "type": "showcase", "settings": { "mock_type": "packing", "title": "AI 3D Bin Packing" } },
+        { "type": "showcase", "settings": { "mock_type": "dashboard", "title": "Multi-Carrier Sync" } }
       ]
     }
   ]
