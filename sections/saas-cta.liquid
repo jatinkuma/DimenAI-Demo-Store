@@ -11,7 +11,7 @@
     text-align: center !important;
     position: relative;
     overflow: hidden;
-    box-shadow: 0 20px 50px rgba(99, 102, 241, 0.2) !important;
+    box-shadow: 0 20px 50px rgba(45, 90, 39, 0.2) !important;
   }
   .saas-cta-container::before {
     content: '';
@@ -44,7 +44,7 @@
   }
   .button--cta {
     background: #ffffff !important;
-    color: #6366f1 !important;
+    color: #2d5a27 !important;
     border-radius: var(--radius-pill) !important;
     padding: 20px 48px !important;
     font-weight: 700 !important;
@@ -75,12 +75,13 @@
 <section class="saas-cta">
   <div class="page-width">
     <div class="saas-cta-container">
-      <h2 class="saas-cta-heading">Ready to grow your store?</h2>
-      <p class="saas-cta-text">Join merchants already using 
-Ests Product Inquire Pro to drive more sales and automate growth.</p>
-      <a href="https://apps.shopify.com/product-inquiry" class="button--cta">
-        Start Free Trial <span>→</span>
-      </a>
+      <h2 class="saas-cta-heading">{{ section.settings.title }}</h2>
+      <p class="saas-cta-text">{{ section.settings.text }}</p>
+      {%- if section.settings.button_label != blank -%}
+        <a href="{{ section.settings.button_link }}" class="button--cta">
+          {{ section.settings.button_label }} <span>→</span>
+        </a>
+      {%- endif -%}
     </div>
   </div>
 </section>

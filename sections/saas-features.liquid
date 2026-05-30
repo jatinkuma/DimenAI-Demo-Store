@@ -89,37 +89,19 @@
     </div>
 
     <div class="saas-features-grid">
-      <div class="saas-feature-card">
-        <div class="saas-feature-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg>
+      {%- for block in section.blocks -%}
+        <div class="saas-feature-card" {{ block.shopify_attributes }}>
+          <div class="saas-feature-icon">
+            {%- if block.settings.icon_svg != blank -%}
+              {{ block.settings.icon_svg }}
+            {%- else -%}
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg>
+            {%- endif -%}
+          </div>
+          <h3 class="saas-feature-title">{{ block.settings.title }}</h3>
+          <p class="saas-feature-text">{{ block.settings.text }}</p>
         </div>
-        <h3 class="saas-feature-title">Lightning Fast Setup</h3>
-        <p class="saas-feature-text">Install and go live in under 2 minutes. No coding required, no complex configurations.</p>
-      </div>
-
-      <div class="saas-feature-card">
-        <div class="saas-feature-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
-        </div>
-        <h3 class="saas-feature-title">Smart Analytics</h3>
-        <p class="saas-feature-text">Real-time insights into your store performance with actionable recommendations.</p>
-      </div>
-
-      <div class="saas-feature-card">
-        <div class="saas-feature-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
-        </div>
-        <h3 class="saas-feature-title">Fully Customizable</h3>
-        <p class="saas-feature-text">Match your brand perfectly with flexible design controls and theme integration.</p>
-      </div>
-
-      <div class="saas-feature-card">
-        <div class="saas-feature-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-        </div>
-        <h3 class="saas-feature-title">Enterprise Security</h3>
-        <p class="saas-feature-text">Bank-level encryption and GDPR compliance. Your data is always safe with us.</p>
-      </div>
+      {%- endfor -%}
     </div>
   </div>
 </section>

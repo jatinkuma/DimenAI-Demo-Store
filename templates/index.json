@@ -1,12 +1,3 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "sections": {
     "image_banner": {
@@ -15,25 +6,25 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Scale Your Store with Premium Solutions",
+            "heading": "DimenAI – Smart Shipping & Box",
             "heading_size": "h0"
           }
         },
         "text": {
           "type": "text",
           "settings": {
-            "text": "The ultimate Shopify app for merchants who demand high conversion, modern design, and seamless performance.",
+            "text": "DimenAI helps merchants offer accurate shipping rates and ship orders efficiently with AI-powered 3D bin packing and multi-carrier integration.",
             "text_style": "body"
           }
         },
         "button": {
           "type": "buttons",
           "settings": {
-            "button_label_1": "Get Started",
-            "button_link_1": "shopify://collections/all",
+            "button_label_1": "Try DimenAI Now",
+            "button_link_1": "https://apps.shopify.com/estsshipping",
             "button_style_secondary_1": false,
-            "button_label_2": "View Demo",
-            "button_link_2": "shopify://collections/all",
+            "button_label_2": "Learn More",
+            "button_link_2": "#features",
             "button_style_secondary_2": true
           }
         }
@@ -50,7 +41,7 @@
         "desktop_content_position": "middle-center",
         "desktop_content_alignment": "center",
         "show_text_box": false,
-        "color_scheme": "scheme-1",
+        "color_scheme": "scheme-2",
         "stack_images_on_mobile": false,
         "mobile_content_alignment": "center",
         "show_text_below": false
@@ -62,65 +53,46 @@
         "f1": {
           "type": "feature",
           "settings": {
-            "icon_svg": "",
-            "title": "One-Click Installation",
-            "text": "Get up and running in minutes with our zero-config setup process designed for busy merchants."
+            "icon_svg": "<svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z\"></path><polyline points=\"3.27 6.96 12 12.01 20.73 6.96\"></polyline><line x1=\"12\" y1=\"22.08\" x2=\"12\" y2=\"12\"></line></svg>",
+            "title": "AI 3D Bin Packing",
+            "text": "Automatically fits order items into your boxes so you use the right size and avoid oversized shipping costs."
           }
         },
         "f2": {
           "type": "feature",
           "settings": {
-            "icon_svg": "",
-            "title": "Enterprise Security",
-            "text": "Your data is protected with SOC2 compliant infrastructure and end-to-end encryption."
+            "icon_svg": "<svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"1\" y=\"3\" width=\"15\" height=\"13\"></rect><polygon points=\"16 8 20 8 23 11 23 16 16 16 16 8\"></polygon><circle cx=\"5.5\" cy=\"18.5\" r=\"2.5\"></circle><circle cx=\"18.5\" cy=\"18.5\" r=\"2.5\"></circle></svg>",
+            "title": "Real-time Shipping Rates",
+            "text": "Show live rates from UPS, USPS, FedEx, and Australia Post at checkout and in the admin."
           }
         },
         "f3": {
           "type": "feature",
           "settings": {
-            "icon_svg": "",
-            "title": "24/7 Priority Support",
-            "text": "Our team of Shopify experts is always available to help you maximize your store's potential."
+            "icon_svg": "<svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z\"></path><polyline points=\"14 2 14 8 20 8\"></polyline><line x1=\"16\" y1=\"13\" x2=\"8\" y2=\"13\"></line><line x1=\"16\" y1=\"17\" x2=\"8\" y2=\"17\"></line><polyline points=\"10 9 9 9 8 9\"></polyline></svg>",
+            "title": "Buy Labels Efficiently",
+            "text": "Review orders, see packed boxes, and buy labels without leaving the app for a streamlined workflow."
+          }
+        },
+        "f4": {
+          "type": "feature",
+          "settings": {
+            "icon_svg": "<svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"12\" cy=\"12\" r=\"10\"></circle><line x1=\"12\" y1=\"8\" x2=\"12\" y2=\"12\"></line><line x1=\"12\" y1=\"16\" x2=\"12.01\" y2=\"16\"></line></svg>",
+            "title": "Package Management",
+            "text": "Create and manage your box dimensions and weight limits; the app uses them for accurate rates and packing."
           }
         }
       },
       "block_order": [
         "f1",
         "f2",
-        "f3"
+        "f3",
+        "f4"
       ],
       "settings": {
-        "title": "Engineered for Growth",
+        "title": "Powerful Features for Smart Shipping",
         "heading_size": "h1",
         "description": ""
-      }
-    },
-    "featured_collection": {
-      "type": "featured-collection",
-      "settings": {
-        "collection": "beauty-products",
-        "products_to_show": 12,
-        "title": "Core Modules",
-        "heading_size": "h1",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "columns_desktop": 4,
-        "enable_desktop_slider": false,
-        "full_width": false,
-        "show_view_all": true,
-        "view_all_style": "solid",
-        "color_scheme": "scheme-1",
-        "image_ratio": "square",
-        "image_shape": "default",
-        "show_secondary_image": false,
-        "show_vendor": false,
-        "show_rating": false,
-        "quick_add": "none",
-        "columns_mobile": "2",
-        "swipe_on_mobile": false,
-        "padding_top": 80,
-        "padding_bottom": 80
       }
     },
     "saas_showcase": {
@@ -129,36 +101,60 @@
         "s1": {
           "type": "showcase",
           "settings": {
-            "title": "Deep Integration",
-            "text": "<p>Works seamlessly with your existing tech stack, from Klaviyo to Gorgias and everything in between.</p>",
-            "button_label": "View Integration →",
-            "button_link": ""
+            "title": "Live Carrier Rates",
+            "text": "<p>Integrate directly with major carriers to provide your customers with the most accurate shipping costs at checkout.</p>",
+            "button_label": "Explore Carriers →",
+            "button_link": "https://apps.shopify.com/estsshipping"
+          }
+        },
+        "s2": {
+          "type": "showcase",
+          "settings": {
+            "title": "Optimized Packing",
+            "text": "<p>Our AI algorithm calculates the most efficient way to pack items, reducing waste and shipping expenses.</p>",
+            "button_label": "See How it Works →",
+            "button_link": "https://apps.shopify.com/estsshipping"
+          }
+        },
+        "s3": {
+          "type": "showcase",
+          "settings": {
+            "title": "Label Purchasing",
+            "text": "<p>Save time by purchasing shipping labels directly within the app once your boxes are packed and ready.</p>",
+            "button_label": "Start Shipping →",
+            "button_link": "https://apps.shopify.com/estsshipping"
           }
         }
       },
       "block_order": [
-        "s1"
+        "s1",
+        "s2",
+        "s3"
       ],
       "settings": {
-        "title": "The Only Solution You'll Ever Need",
+        "title": "Seamless Shipping Experience",
         "heading_size": "h1"
       }
+    },
+    "saas_benefits": {
+      "type": "saas-benefits",
+      "settings": {}
     },
     "saas_cta": {
       "type": "saas-cta",
       "settings": {
-        "title": "Start Your 14-Day Free Trial",
-        "text": "Join the world's most successful Shopify stores today. No credit card required.",
-        "button_label": "Start Free Trial",
-        "button_link": ""
+        "title": "Ready to Optimize Your Shipping?",
+        "text": "Join thousands of merchants using DimenAI to save time and money on every order.",
+        "button_label": "Get DimenAI on Shopify",
+        "button_link": "https://apps.shopify.com/estsshipping"
       }
     }
   },
   "order": [
     "image_banner",
     "saas_features",
-    "featured_collection",
     "saas_showcase",
+    "saas_benefits",
     "saas_cta"
   ]
 }
