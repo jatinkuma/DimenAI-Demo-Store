@@ -116,12 +116,23 @@
             "button_label": "Start Shipping →",
             "button_link": "https://apps.shopify.com/estsshipping"
           }
+        },
+        "s4": {
+          "type": "showcase",
+          "settings": {
+            "mock_type": "packages",
+            "title": "Smart Package Management",
+            "text": "<p>Pre-configure standard carrier boxes or add your own custom packaging. DimenAI uses these dimensions to ensure the most accurate shipping rates at checkout.</p>",
+            "button_label": "Manage Boxes →",
+            "button_link": "https://apps.shopify.com/estsshipping"
+          }
         }
       },
       "block_order": [
         "s1",
         "s2",
-        "s3"
+        "s3",
+        "s4"
       ],
       "settings": {
         "title": "The DimenAI Difference"
