@@ -6,26 +6,22 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Scale Your Store with Premium Solutions",
-            "heading_size": "h0"
+            "heading": "DimenAI – <span class=\"highlight\">Smart Shipping</span> & 3D Packing"
           }
         },
         "text": {
           "type": "text",
           "settings": {
-            "text": "The ultimate Shopify app for merchants who demand high conversion, modern design, and seamless performance.",
-            "text_style": "body"
+            "text": "Offer accurate real-time shipping rates and ship orders efficiently. Optimize every shipment with AI-powered 3D bin packing and multi-carrier integration."
           }
         },
         "button": {
           "type": "buttons",
           "settings": {
-            "button_label_1": "Get Started",
-            "button_link_1": "shopify://collections/all",
-            "button_style_secondary_1": false,
-            "button_label_2": "View Demo",
-            "button_link_2": "shopify://collections/all",
-            "button_style_secondary_2": true
+            "button_label_1": "Try DimenAI Free",
+            "button_link_1": "https://apps.shopify.com/estsshipping",
+            "button_label_2": "Learn More",
+            "button_link_2": "#features"
           }
         }
       },
@@ -35,16 +31,7 @@
         "button"
       ],
       "settings": {
-        "image_overlay_opacity": 0,
-        "image_height": "large",
-        "image_behavior": "none",
-        "desktop_content_position": "middle-center",
-        "desktop_content_alignment": "center",
-        "show_text_box": false,
-        "color_scheme": "scheme-1",
-        "stack_images_on_mobile": false,
-        "mobile_content_alignment": "center",
-        "show_text_below": false
+        "hero_badge": "Next-Gen Shipping Intelligence for Shopify"
       }
     },
     "saas_features": {
@@ -53,65 +40,63 @@
         "f1": {
           "type": "feature",
           "settings": {
-            "icon_svg": "",
-            "title": "One-Click Installation",
-            "text": "Get up and running in minutes with our zero-config setup process designed for busy merchants."
+            "size": "large",
+            "icon_svg": "<svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z\"></path><polyline points=\"3.27 6.96 12 12.01 20.73 6.96\"></polyline><line x1=\"12\" y1=\"22.08\" x2=\"12\" y2=\"12\"></line></svg>",
+            "title": "AI 3D Bin Packing",
+            "text": "Automatically fits order items into your boxes in 3D so you use the right size every time. Reduce dimensional weight costs and eliminate manual guesswork."
           }
         },
         "f2": {
           "type": "feature",
           "settings": {
-            "icon_svg": "",
-            "title": "Enterprise Security",
-            "text": "Your data is protected with SOC2 compliant infrastructure and end-to-end encryption."
+            "size": "standard",
+            "icon_svg": "<svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"1\" y=\"3\" width=\"15\" height=\"13\"></rect><polygon points=\"16 8 20 8 23 11 23 16 16 16 16 8\"></polygon><circle cx=\"5.5\" cy=\"18.5\" r=\"2.5\"></circle><circle cx=\"18.5\" cy=\"18.5\" r=\"2.5\"></circle></svg>",
+            "title": "Real-time Shipping Rates",
+            "text": "Show live rates from UPS, USPS, FedEx, and Australia Post directly at checkout and in your admin panel."
           }
         },
         "f3": {
           "type": "feature",
           "settings": {
-            "icon_svg": "",
-            "title": "24/7 Priority Support",
-            "text": "Our team of Shopify experts is always available to help you maximize your store's potential."
+            "size": "standard",
+            "icon_svg": "<svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"12\" cy=\"12\" r=\"10\"></circle><line x1=\"12\" y1=\"8\" x2=\"12\" y2=\"12\"></line><line x1=\"12\" y1=\"16\" x2=\"12.01\" y2=\"16\"></line></svg>",
+            "title": "Package Management",
+            "text": "Create and manage your custom box dimensions and weight limits for 100% rate accuracy on every order."
+          }
+        },
+        "f4": {
+          "type": "feature",
+          "settings": {
+            "size": "tall",
+            "icon_svg": "<svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z\"></path><polyline points=\"14 2 14 8 20 8\"></polyline><line x1=\"16\" y1=\"13\" x2=\"8\" y2=\"13\"></line><line x1=\"16\" y1=\"17\" x2=\"8\" y2=\"17\"></line></svg>",
+            "title": "Order Shipment Workflow",
+            "text": "Review orders, see packed boxes, and purchase shipping labels without ever leaving the DimenAI app interface."
           }
         }
       },
       "block_order": [
         "f1",
         "f2",
-        "f3"
+        "f3",
+        "f4"
       ],
       "settings": {
-        "title": "Engineered for Growth",
-        "heading_size": "h1",
-        "description": ""
+        "title": "Built to Optimize Your Shipping"
       }
     },
-    "featured_collection": {
+    "core_modules": {
       "type": "featured-collection",
       "settings": {
-        "collection": "all",
-        "products_to_show": 8,
-        "title": "Core Modules",
+        "title": "Featured Shipping Solutions",
         "heading_size": "h1",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
+        "collection": "all",
+        "products_to_show": 4,
         "columns_desktop": 4,
-        "enable_desktop_slider": false,
-        "full_width": false,
-        "show_view_all": true,
-        "view_all_style": "solid",
         "color_scheme": "scheme-1",
         "image_ratio": "square",
-        "image_shape": "default",
-        "show_secondary_image": false,
         "show_vendor": false,
         "show_rating": false,
-        "quick_add": "none",
-        "columns_mobile": "2",
-        "swipe_on_mobile": false,
-        "padding_top": 80,
-        "padding_bottom": 80
+        "enable_quick_add": true
       }
     },
     "saas_showcase": {
@@ -120,35 +105,57 @@
         "s1": {
           "type": "showcase",
           "settings": {
-            "title": "Deep Integration",
-            "text": "<p>Works seamlessly with your existing tech stack, from Klaviyo to Gorgias and everything in between.</p>",
-            "button_label": "View Integration ΓåÆ",
-            "button_link": ""
+            "mock_type": "checkout",
+            "title": "Multi-Carrier Real-time Rates",
+            "text": "<p>Empower your customers with the most accurate shipping options. DimenAI fetches live data from UPS, USPS, FedEx, and Australia Post to ensure fair and transparent pricing at checkout.</p>",
+            "button_label": "Explore Carriers →",
+            "button_link": "https://apps.shopify.com/estsshipping"
+          }
+        },
+        "s2": {
+          "type": "showcase",
+          "settings": {
+            "mock_type": "packing",
+            "title": "Intelligent 3D Bin Packing",
+            "text": "<p>Save up to 30% on shipping by using the most efficient packaging. Our AI analyzes your order items and calculates the perfect fit for your boxes in real-time.</p>",
+            "button_label": "See How it Works →",
+            "button_link": "https://apps.shopify.com/estsshipping"
+          }
+        },
+        "s3": {
+          "type": "showcase",
+          "settings": {
+            "mock_type": "dashboard",
+            "title": "Unified Carrier Management",
+            "text": "<p>Securely integrate and manage all your carrier accounts in one place. Configure separate handling fees for products and carriers to fine-tune your margins.</p>",
+            "button_label": "Manage Carriers →",
+            "button_link": "https://apps.shopify.com/estsshipping"
           }
         }
       },
       "block_order": [
-        "s1"
+        "s1",
+        "s2",
+        "s3"
       ],
       "settings": {
-        "title": "The Only Solution You'll Ever Need",
-        "heading_size": "h1"
+        "title": "The DimenAI Advantage"
       }
     },
     "saas_cta": {
       "type": "saas-cta",
       "settings": {
-        "title": "Start Your 14-Day Free Trial",
-        "text": "Join the world's most successful Shopify stores today. No credit card required.",
-        "button_label": "Start Free Trial",
-        "button_link": ""
+        "title": "Ready to Transform Your Shipping?",
+        "text": "Join thousands of merchants using DimenAI to save time and money on every shipment. Start your journey today.",
+        "button_label": "Install DimenAI Now",
+        "button_link": "https://apps.shopify.com/estsshipping"
       }
     }
   },
   "order": [
     "image_banner",
     "saas_features",
-    "featured_collection",
+    "core_modules",
     "saas_showcase",
     "saas_cta"
   ]
