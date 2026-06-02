@@ -145,9 +145,9 @@
     "saas_cta": {
       "type": "saas-cta",
       "settings": {
-        "title": "Ready to Transform Your Shipping?",
-        "text": "Join thousands of merchants using DimenAI to save time and money on every shipment. Start your journey today.",
-        "button_label": "Install DimenAI Now",
+        "title": "Stop Overpaying for Shipping",
+        "text": "Join successful merchants who use DimenAI to automate their packing and offer pinpoint accurate carrier rates at checkout.",
+        "button_label": "Get DimenAI on Shopify",
         "button_link": "https://apps.shopify.com/estsshipping"
       }
     }
