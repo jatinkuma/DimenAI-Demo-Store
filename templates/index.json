@@ -142,7 +142,7 @@
         "title": "The DimenAI Advantage"
       }
     },
-    "saas_cta": {
+    "dimenai_final_cta": {
       "type": "saas-cta",
       "settings": {
         "title": "Stop Overpaying for Shipping",
@@ -157,6 +157,6 @@
     "saas_features",
     "core_modules",
     "saas_showcase",
-    "saas_cta"
+    "dimenai_final_cta"
   ]
 }
