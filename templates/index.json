@@ -84,6 +84,21 @@
         "title": "Powerful Features for Smart Shipping"
       }
     },
+    "core_modules": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Core Modules",
+        "heading_size": "h1",
+        "collection": "all",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "color_scheme": "scheme-1",
+        "image_ratio": "square",
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": true
+      }
+    },
     "saas_showcase": {
       "type": "saas-showcase",
       "blocks": {
@@ -188,6 +203,7 @@
   "order": [
     "image_banner",
     "saas_features",
+    "core_modules",
     "saas_showcase",
     "saas_benefits",
     "saas_cta"
