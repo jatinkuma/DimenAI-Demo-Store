@@ -38,6 +38,10 @@
       "type": "saas-carriers",
       "settings": {}
     },
+    "app_overview": {
+      "type": "saas-app-overview",
+      "settings": {}
+    },
     "saas_features": {
       "type": "saas-features",
       "blocks": {
@@ -229,6 +233,7 @@
   "order": [
     "image_banner",
     "carriers_strip",
+    "app_overview",
     "saas_features",
     "saas_showcase",
     "saas_benefits",

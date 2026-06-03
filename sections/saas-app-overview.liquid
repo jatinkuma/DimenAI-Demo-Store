@@ -1,0 +1,522 @@
+{%- style -%}
+  /* ── App Overview Section ── */
+  .app-overview {
+    padding: 100px 0 !important;
+    background: #f8faf8 !important;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .app-overview::before {
+    content: '';
+    position: absolute;
+    top: -120px;
+    left: -120px;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(45, 90, 39, 0.04) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  /* ── Section Label ── */
+  .app-overview__label {
+    display: inline-block;
+    color: var(--color-brand-1, #2d5a27) !important;
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.12em !important;
+    margin-bottom: 16px !important;
+    background: rgba(45, 90, 39, 0.07);
+    padding: 6px 14px;
+    border-radius: 20px;
+  }
+
+  /* ── Main Heading ── */
+  .app-overview__heading {
+    font-size: 44px !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.03em !important;
+    color: #0f1a0e !important;
+    line-height: 1.1 !important;
+    margin-bottom: 24px !important;
+    max-width: 700px !important;
+  }
+
+  .app-overview__heading .highlight {
+    background: linear-gradient(135deg, #2d5a27 0%, #4a8c40 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* ── Subtext ── */
+  .app-overview__subtext {
+    font-size: 18px !important;
+    color: #4a5a4a !important;
+    line-height: 1.7 !important;
+    max-width: 640px !important;
+    margin-bottom: 48px !important;
+  }
+
+  /* ── Two-col layout: description left, workflow right ── */
+  .app-overview__grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 80px !important;
+    align-items: start !important;
+    margin-bottom: 80px !important;
+  }
+
+  /* ── What it does list ── */
+  .app-overview__list {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 0 40px 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 20px !important;
+  }
+
+  .app-overview__list-item {
+    display: flex !important;
+    align-items: flex-start !important;
+    gap: 16px !important;
+  }
+
+  .app-overview__list-icon {
+    width: 40px !important;
+    height: 40px !important;
+    background: #ffffff !important;
+    border: 1px solid #e8f0e8 !important;
+    border-radius: 12px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-shrink: 0 !important;
+    color: var(--color-brand-1, #2d5a27) !important;
+    box-shadow: 0 2px 8px rgba(45, 90, 39, 0.08) !important;
+    margin-top: 2px;
+  }
+
+  .app-overview__list-content {}
+
+  .app-overview__list-title {
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    color: #0f1a0e !important;
+    margin-bottom: 4px !important;
+  }
+
+  .app-overview__list-desc {
+    font-size: 14px !important;
+    color: #64748b !important;
+    line-height: 1.6 !important;
+    margin: 0 !important;
+  }
+
+  /* ── How it works steps ── */
+  .app-overview__steps-title {
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.1em !important;
+    color: #94a3b8 !important;
+    margin-bottom: 24px !important;
+  }
+
+  .app-overview__steps {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0 !important;
+  }
+
+  .app-overview__step {
+    display: flex !important;
+    gap: 20px !important;
+    position: relative !important;
+  }
+
+  .app-overview__step-left {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    flex-shrink: 0 !important;
+  }
+
+  .app-overview__step-num {
+    width: 36px !important;
+    height: 36px !important;
+    background: var(--color-brand-1, #2d5a27) !important;
+    color: #ffffff !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 14px !important;
+    font-weight: 800 !important;
+    flex-shrink: 0 !important;
+    z-index: 1 !important;
+  }
+
+  .app-overview__step-line {
+    width: 2px !important;
+    flex: 1 !important;
+    background: #e2e8e2 !important;
+    min-height: 32px !important;
+    margin: 4px 0 !important;
+  }
+
+  .app-overview__step:last-child .app-overview__step-line {
+    display: none !important;
+  }
+
+  .app-overview__step-body {
+    padding-bottom: 28px !important;
+  }
+
+  .app-overview__step-title {
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    color: #0f1a0e !important;
+    margin-bottom: 6px !important;
+    line-height: 1.3 !important;
+  }
+
+  .app-overview__step-desc {
+    font-size: 14px !important;
+    color: #64748b !important;
+    line-height: 1.6 !important;
+    margin: 0 !important;
+  }
+
+  /* ── Bottom: Who is it for ── */
+  .app-overview__for {
+    background: #ffffff !important;
+    border-radius: 28px !important;
+    padding: 56px 48px !important;
+    border: 1px solid #e8f0e8 !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03) !important;
+  }
+
+  .app-overview__for-heading {
+    font-size: 28px !important;
+    font-weight: 800 !important;
+    color: #0f1a0e !important;
+    margin-bottom: 8px !important;
+    letter-spacing: -0.02em !important;
+  }
+
+  .app-overview__for-sub {
+    font-size: 16px !important;
+    color: #64748b !important;
+    margin-bottom: 40px !important;
+    line-height: 1.6 !important;
+  }
+
+  .app-overview__for-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 24px !important;
+  }
+
+  .app-overview__for-card {
+    background: #f8faf8 !important;
+    border-radius: 16px !important;
+    padding: 28px 24px !important;
+    border: 1px solid #e8f0e8 !important;
+    transition: all 0.3s ease !important;
+  }
+
+  .app-overview__for-card:hover {
+    background: #f0f4f0 !important;
+    border-color: rgba(45, 90, 39, 0.15) !important;
+    transform: translateY(-3px) !important;
+  }
+
+  .app-overview__for-card-icon {
+    font-size: 28px !important;
+    margin-bottom: 14px !important;
+    display: block !important;
+  }
+
+  .app-overview__for-card-title {
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    color: #0f1a0e !important;
+    margin-bottom: 8px !important;
+  }
+
+  .app-overview__for-card-desc {
+    font-size: 13px !important;
+    color: #64748b !important;
+    line-height: 1.6 !important;
+    margin: 0 !important;
+  }
+
+  /* ── CTA inside section ── */
+  .app-overview__cta {
+    display: flex !important;
+    gap: 16px !important;
+    align-items: center !important;
+    flex-wrap: wrap !important;
+  }
+
+  .app-overview__btn-primary {
+    background: var(--color-brand-1, #2d5a27) !important;
+    color: #ffffff !important;
+    padding: 16px 36px !important;
+    border-radius: 100px !important;
+    font-size: 15px !important;
+    font-weight: 700 !important;
+    text-decoration: none !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    transition: all 0.3s ease !important;
+  }
+
+  .app-overview__btn-primary:hover {
+    background: #245020 !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 24px rgba(45, 90, 39, 0.25) !important;
+  }
+
+  .app-overview__btn-secondary {
+    color: var(--color-brand-1, #2d5a27) !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    text-decoration: none !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    padding: 16px 0 !important;
+    border-bottom: 2px solid transparent !important;
+    transition: border-color 0.2s ease !important;
+  }
+
+  .app-overview__btn-secondary:hover {
+    border-color: var(--color-brand-1, #2d5a27) !important;
+  }
+
+  /* Responsive */
+  @media screen and (max-width: 989px) {
+    .app-overview__grid {
+      grid-template-columns: 1fr !important;
+      gap: 48px !important;
+    }
+    .app-overview__for-grid {
+      grid-template-columns: 1fr 1fr !important;
+    }
+    .app-overview__heading {
+      font-size: 34px !important;
+    }
+    .app-overview__for {
+      padding: 40px 28px !important;
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .app-overview {
+      padding: 64px 0 !important;
+    }
+    .app-overview__for-grid {
+      grid-template-columns: 1fr !important;
+    }
+    .app-overview__heading {
+      font-size: 28px !important;
+    }
+  }
+{%- endstyle -%}
+
+<section class="app-overview">
+  <div class="page-width">
+
+    <!-- Top label + heading -->
+    <div style="margin-bottom: 64px;">
+      <span class="app-overview__label">What is DimenAI?</span>
+      <h2 class="app-overview__heading">
+        One Shopify app that handles<br><span class="highlight">your entire shipping workflow</span>
+      </h2>
+      <p class="app-overview__subtext">
+        DimenAI is a Shopify shipping app built for merchants who want accurate rates, smarter packing, and a faster fulfillment process — all without leaving the Shopify admin. Connect your carrier accounts, define your boxes, and let the AI handle the rest.
+      </p>
+    </div>
+
+    <!-- Two col: What it does + How it works -->
+    <div class="app-overview__grid">
+
+      <!-- Left: What DimenAI does -->
+      <div>
+        <p class="app-overview__steps-title">What DimenAI Does</p>
+        <ul class="app-overview__list">
+
+          <li class="app-overview__list-item">
+            <div class="app-overview__list-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+            </div>
+            <div class="app-overview__list-content">
+              <div class="app-overview__list-title">Shows live shipping rates at checkout</div>
+              <p class="app-overview__list-desc">Fetches real-time rates from UPS, USPS, FedEx, and Australia Post using your own carrier credentials — so your customers always see accurate, up-to-date pricing.</p>
+            </div>
+          </li>
+
+          <li class="app-overview__list-item">
+            <div class="app-overview__list-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg>
+            </div>
+            <div class="app-overview__list-content">
+              <div class="app-overview__list-title">Automatically packs orders using AI</div>
+              <p class="app-overview__list-desc">The AI calculates the most space-efficient way to fit all items from an order into your boxes in 3D — picking the right box every time and eliminating oversized packaging.</p>
+            </div>
+          </li>
+
+          <li class="app-overview__list-item">
+            <div class="app-overview__list-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+            </div>
+            <div class="app-overview__list-content">
+              <div class="app-overview__list-title">Manages your box library</div>
+              <p class="app-overview__list-desc">Add your own custom box sizes or pick from a library of official carrier packaging (UPS, USPS, FedEx, Australia Post) with dimensions and weight limits pre-filled.</p>
+            </div>
+          </li>
+
+          <li class="app-overview__list-item">
+            <div class="app-overview__list-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+            </div>
+            <div class="app-overview__list-content">
+              <div class="app-overview__list-title">Handles full order shipment workflow</div>
+              <p class="app-overview__list-desc">Review orders, see exactly how items are packed, compare carrier rates side-by-side, and purchase shipping labels — all inside DimenAI without switching apps or tabs.</p>
+            </div>
+          </li>
+
+          <li class="app-overview__list-item">
+            <div class="app-overview__list-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+            </div>
+            <div class="app-overview__list-content">
+              <div class="app-overview__list-title">Controls handling fees precisely</div>
+              <p class="app-overview__list-desc">Set separate handling fees at the product level and carrier level — flat amounts or percentages — to protect your margins on every shipment.</p>
+            </div>
+          </li>
+
+        </ul>
+
+        <div class="app-overview__cta">
+          <a href="https://apps.shopify.com/estsshipping" class="app-overview__btn-primary">
+            Install DimenAI Free <span>→</span>
+          </a>
+          <a href="#features" class="app-overview__btn-secondary">
+            See all features <span>↓</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Right: How it works steps -->
+      <div>
+        <p class="app-overview__steps-title">How It Works</p>
+        <div class="app-overview__steps">
+
+          <div class="app-overview__step">
+            <div class="app-overview__step-left">
+              <div class="app-overview__step-num">1</div>
+              <div class="app-overview__step-line"></div>
+            </div>
+            <div class="app-overview__step-body">
+              <div class="app-overview__step-title">Connect your carrier accounts</div>
+              <p class="app-overview__step-desc">Securely add your UPS, USPS, FedEx, or Australia Post account credentials. DimenAI uses them to fetch your negotiated shipping rates in real time.</p>
+            </div>
+          </div>
+
+          <div class="app-overview__step">
+            <div class="app-overview__step-left">
+              <div class="app-overview__step-num">2</div>
+              <div class="app-overview__step-line"></div>
+            </div>
+            <div class="app-overview__step-body">
+              <div class="app-overview__step-title">Set up your boxes</div>
+              <p class="app-overview__step-desc">Add your custom box dimensions and weight limits, or choose from pre-built carrier packaging. DimenAI uses this data for accurate packing and rate calculations.</p>
+            </div>
+          </div>
+
+          <div class="app-overview__step">
+            <div class="app-overview__step-left">
+              <div class="app-overview__step-num">3</div>
+              <div class="app-overview__step-line"></div>
+            </div>
+            <div class="app-overview__step-body">
+              <div class="app-overview__step-title">Enable carrier rates at checkout</div>
+              <p class="app-overview__step-desc">Turn on the carrier service. Customers at checkout instantly see live shipping options from your connected carriers, calculated using actual packed dimensions.</p>
+            </div>
+          </div>
+
+          <div class="app-overview__step">
+            <div class="app-overview__step-left">
+              <div class="app-overview__step-num">4</div>
+              <div class="app-overview__step-line"></div>
+            </div>
+            <div class="app-overview__step-body">
+              <div class="app-overview__step-title">Fulfill orders efficiently</div>
+              <p class="app-overview__step-desc">When an order comes in, DimenAI shows you the AI-packed box layout, lets you compare carrier rates, and buy the label — all in one place inside your Shopify admin.</p>
+            </div>
+          </div>
+
+          <div class="app-overview__step">
+            <div class="app-overview__step-left">
+              <div class="app-overview__step-num">5</div>
+            </div>
+            <div class="app-overview__step-body">
+              <div class="app-overview__step-title">Ship smarter, reduce costs</div>
+              <p class="app-overview__step-desc">With every order packed optimally and rated accurately, you eliminate wasted packaging, reduce dimensional weight charges, and give customers the fairest price possible.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div><!-- end grid -->
+
+    <!-- Who is it for -->
+    <div class="app-overview__for">
+      <h3 class="app-overview__for-heading">Who Is DimenAI For?</h3>
+      <p class="app-overview__for-sub">DimenAI is built for any Shopify merchant who ships physical products and wants to take control of shipping costs and accuracy.</p>
+
+      <div class="app-overview__for-grid">
+
+        <div class="app-overview__for-card">
+          <span class="app-overview__for-card-icon">🛍️</span>
+          <div class="app-overview__for-card-title">Growing Shopify Stores</div>
+          <p class="app-overview__for-card-desc">If you're shipping more than a handful of orders per week and want to stop losing money on inaccurate shipping charges, DimenAI handles it automatically.</p>
+        </div>
+
+        <div class="app-overview__for-card">
+          <span class="app-overview__for-card-icon">📦</span>
+          <div class="app-overview__for-card-title">Multi-SKU Product Catalogs</div>
+          <p class="app-overview__for-card-desc">Selling products of different sizes? DimenAI's 3D bin packing ensures every combination of items is packed into the right box — no manual calculation needed.</p>
+        </div>
+
+        <div class="app-overview__for-card">
+          <span class="app-overview__for-card-icon">🌏</span>
+          <div class="app-overview__for-card-title">International & Domestic Shippers</div>
+          <p class="app-overview__for-card-desc">Whether you ship locally within the US or internationally via Australia Post, DimenAI supports all major carriers with live rate retrieval across regions.</p>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "App Overview",
+  "tag": "section",
+  "class": "section",
+  "settings": [],
+  "presets": [
+    {
+      "name": "App Overview"
+    }
+  ]
+}
+{% endschema %}
