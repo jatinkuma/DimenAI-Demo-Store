@@ -1,0 +1,759 @@
+{%- style -%}
+  /* ── User Guide Section ── */
+  .user-guide {
+    padding: 80px 0 !important;
+    background: #ffffff !important;
+  }
+
+  .user-guide-layout {
+    display: grid !important;
+    grid-template-columns: 260px 1fr !important;
+    gap: 60px !important;
+    align-items: start !important;
+  }
+
+  /* ── Sticky Sidebar TOC ── */
+  .user-guide-toc {
+    position: sticky !important;
+    top: 100px !important;
+  }
+
+  .user-guide-toc-title {
+    font-size: 11px !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.12em !important;
+    color: #94a3b8 !important;
+    margin-bottom: 16px !important;
+  }
+
+  .user-guide-toc-list {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border-left: 2px solid #e8f0e8 !important;
+  }
+
+  .user-guide-toc-item a {
+    display: block !important;
+    padding: 8px 16px !important;
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    color: #64748b !important;
+    text-decoration: none !important;
+    border-left: 2px solid transparent !important;
+    margin-left: -2px !important;
+    transition: all 0.2s ease !important;
+    line-height: 1.4 !important;
+  }
+
+  .user-guide-toc-item a:hover {
+    color: var(--color-brand-1, #2d5a27) !important;
+    border-left-color: var(--color-brand-1, #2d5a27) !important;
+    background: rgba(45, 90, 39, 0.03) !important;
+  }
+
+  .user-guide-toc-item.active a {
+    color: var(--color-brand-1, #2d5a27) !important;
+    border-left-color: var(--color-brand-1, #2d5a27) !important;
+    font-weight: 700 !important;
+  }
+
+  /* ── Main Content ── */
+  .user-guide-content {}
+
+  /* Hero intro */
+  .user-guide-hero {
+    background: linear-gradient(135deg, #f0f4f0, #f8faf8) !important;
+    border: 1px solid #e2ece2 !important;
+    border-radius: 24px !important;
+    padding: 48px !important;
+    margin-bottom: 56px !important;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .user-guide-hero::before {
+    content: '';
+    position: absolute;
+    right: -40px;
+    top: -40px;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(45,90,39,0.05), transparent 70%);
+    border-radius: 50%;
+  }
+
+  .user-guide-hero-badge {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    font-size: 12px !important;
+    font-weight: 700 !important;
+    color: var(--color-brand-1, #2d5a27) !important;
+    background: rgba(45,90,39,0.08) !important;
+    padding: 5px 12px !important;
+    border-radius: 20px !important;
+    margin-bottom: 16px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.08em !important;
+  }
+
+  .user-guide-hero h1 {
+    font-size: 36px !important;
+    font-weight: 800 !important;
+    color: #0f1a0e !important;
+    letter-spacing: -0.03em !important;
+    margin-bottom: 16px !important;
+    line-height: 1.15 !important;
+  }
+
+  .user-guide-hero p {
+    font-size: 17px !important;
+    color: #4a5a4a !important;
+    line-height: 1.7 !important;
+    max-width: 600px !important;
+    margin: 0 !important;
+  }
+
+  /* Section blocks */
+  .guide-section {
+    margin-bottom: 56px !important;
+    scroll-margin-top: 100px !important;
+  }
+
+  .guide-section-header {
+    display: flex !important;
+    align-items: center !important;
+    gap: 14px !important;
+    margin-bottom: 24px !important;
+    padding-bottom: 16px !important;
+    border-bottom: 2px solid #f1f5f9 !important;
+  }
+
+  .guide-section-icon {
+    width: 40px !important;
+    height: 40px !important;
+    background: #f0f4f0 !important;
+    border-radius: 12px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    color: var(--color-brand-1, #2d5a27) !important;
+    flex-shrink: 0 !important;
+  }
+
+  .guide-section-title {
+    font-size: 22px !important;
+    font-weight: 800 !important;
+    color: #0f1a0e !important;
+    letter-spacing: -0.02em !important;
+    margin: 0 !important;
+  }
+
+  .guide-section-body {
+    font-size: 15px !important;
+    color: #334155 !important;
+    line-height: 1.75 !important;
+  }
+
+  .guide-section-body p {
+    margin-bottom: 16px !important;
+  }
+
+  .guide-section-body p:last-child {
+    margin-bottom: 0 !important;
+  }
+
+  /* Feature cards grid */
+  .guide-features-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 16px !important;
+    margin-top: 24px !important;
+  }
+
+  .guide-feature-card {
+    background: #f8faf8 !important;
+    border: 1px solid #e2ece2 !important;
+    border-radius: 14px !important;
+    padding: 20px !important;
+    display: flex !important;
+    gap: 14px !important;
+    align-items: flex-start !important;
+  }
+
+  .guide-feature-card-icon {
+    width: 36px !important;
+    height: 36px !important;
+    background: #ffffff !important;
+    border-radius: 10px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    color: var(--color-brand-1, #2d5a27) !important;
+    flex-shrink: 0 !important;
+    border: 1px solid #e2ece2 !important;
+  }
+
+  .guide-feature-card-title {
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    color: #0f1a0e !important;
+    margin-bottom: 4px !important;
+  }
+
+  .guide-feature-card-desc {
+    font-size: 13px !important;
+    color: #64748b !important;
+    line-height: 1.5 !important;
+    margin: 0 !important;
+  }
+
+  /* Numbered steps */
+  .guide-steps {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0 !important;
+    margin-top: 20px !important;
+  }
+
+  .guide-step {
+    display: flex !important;
+    gap: 16px !important;
+  }
+
+  .guide-step-left {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    flex-shrink: 0 !important;
+  }
+
+  .guide-step-num {
+    width: 32px !important;
+    height: 32px !important;
+    background: var(--color-brand-1, #2d5a27) !important;
+    color: #ffffff !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 13px !important;
+    font-weight: 800 !important;
+    flex-shrink: 0 !important;
+  }
+
+  .guide-step-line {
+    width: 2px !important;
+    flex: 1 !important;
+    background: #e2ece2 !important;
+    min-height: 20px !important;
+    margin: 4px 0 !important;
+  }
+
+  .guide-step:last-child .guide-step-line {
+    display: none !important;
+  }
+
+  .guide-step-body {
+    padding-bottom: 24px !important;
+    flex: 1 !important;
+  }
+
+  .guide-step-title {
+    font-size: 15px !important;
+    font-weight: 700 !important;
+    color: #0f1a0e !important;
+    margin-bottom: 4px !important;
+    line-height: 1.4 !important;
+  }
+
+  .guide-step-desc {
+    font-size: 14px !important;
+    color: #475569 !important;
+    line-height: 1.6 !important;
+    margin: 0 !important;
+  }
+
+  /* Carrier setup tabs */
+  .guide-carrier-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 20px !important;
+    margin-top: 20px !important;
+  }
+
+  .guide-carrier-card {
+    border: 1px solid #e2ece2 !important;
+    border-radius: 16px !important;
+    overflow: hidden !important;
+  }
+
+  .guide-carrier-header {
+    padding: 16px 20px !important;
+    font-weight: 800 !important;
+    font-size: 15px !important;
+    color: #ffffff !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+  }
+
+  .guide-carrier-header.ups { background: #351C15 !important; }
+  .guide-carrier-header.usps { background: #004B87 !important; }
+  .guide-carrier-header.fedex { background: #4D148C !important; }
+  .guide-carrier-header.auspost { background: #DC1928 !important; }
+
+  .guide-carrier-body {
+    padding: 16px 20px !important;
+    background: #f8faf8 !important;
+  }
+
+  .guide-carrier-step {
+    display: flex !important;
+    align-items: flex-start !important;
+    gap: 10px !important;
+    margin-bottom: 10px !important;
+    font-size: 13px !important;
+    color: #334155 !important;
+    line-height: 1.5 !important;
+  }
+
+  .guide-carrier-step:last-child {
+    margin-bottom: 0 !important;
+  }
+
+  .guide-carrier-dot {
+    width: 6px !important;
+    height: 6px !important;
+    background: var(--color-brand-1, #2d5a27) !important;
+    border-radius: 50% !important;
+    flex-shrink: 0 !important;
+    margin-top: 6px !important;
+  }
+
+  /* Info/Note box */
+  .guide-note {
+    background: #f0fdf0 !important;
+    border: 1px solid #bbf7d0 !important;
+    border-radius: 12px !important;
+    padding: 16px 20px !important;
+    display: flex !important;
+    gap: 12px !important;
+    align-items: flex-start !important;
+    margin-top: 16px !important;
+    font-size: 14px !important;
+    color: #15803d !important;
+    line-height: 1.6 !important;
+  }
+
+  .guide-note-icon {
+    flex-shrink: 0 !important;
+    margin-top: 1px !important;
+  }
+
+  /* Warning box */
+  .guide-warning {
+    background: #fffbeb !important;
+    border: 1px solid #fde68a !important;
+    border-radius: 12px !important;
+    padding: 16px 20px !important;
+    display: flex !important;
+    gap: 12px !important;
+    align-items: flex-start !important;
+    margin-top: 16px !important;
+    font-size: 14px !important;
+    color: #92400e !important;
+    line-height: 1.6 !important;
+  }
+
+  /* CTA — Want to Test */
+  .guide-test-cta {
+    background: linear-gradient(135deg, #1e3a1e, #2d5a27) !important;
+    border-radius: 24px !important;
+    padding: 48px !important;
+    text-align: center !important;
+    margin-top: 56px !important;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .guide-test-cta::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 240px; height: 240px;
+    background: radial-gradient(circle, rgba(255,255,255,0.05), transparent 70%);
+    border-radius: 50%;
+  }
+
+  .guide-test-cta h3 {
+    font-size: 28px !important;
+    font-weight: 800 !important;
+    color: #ffffff !important;
+    letter-spacing: -0.02em !important;
+    margin-bottom: 12px !important;
+    position: relative; z-index: 1;
+  }
+
+  .guide-test-cta p {
+    font-size: 16px !important;
+    color: rgba(255,255,255,0.85) !important;
+    margin-bottom: 32px !important;
+    line-height: 1.6 !important;
+    max-width: 480px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    position: relative; z-index: 1;
+  }
+
+  .guide-test-cta-buttons {
+    display: flex !important;
+    gap: 16px !important;
+    justify-content: center !important;
+    flex-wrap: wrap !important;
+    position: relative; z-index: 1;
+  }
+
+  .guide-cta-btn-primary {
+    background: #ffffff !important;
+    color: #2d5a27 !important;
+    padding: 14px 32px !important;
+    border-radius: 100px !important;
+    font-size: 15px !important;
+    font-weight: 700 !important;
+    text-decoration: none !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    transition: all 0.3s ease !important;
+  }
+
+  .guide-cta-btn-primary:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.2) !important;
+  }
+
+  .guide-cta-btn-secondary {
+    background: rgba(255,255,255,0.12) !important;
+    color: #ffffff !important;
+    padding: 14px 32px !important;
+    border-radius: 100px !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    text-decoration: none !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    border: 1px solid rgba(255,255,255,0.25) !important;
+    transition: all 0.3s ease !important;
+  }
+
+  .guide-cta-btn-secondary:hover {
+    background: rgba(255,255,255,0.2) !important;
+  }
+
+  @media screen and (max-width: 989px) {
+    .user-guide-layout {
+      grid-template-columns: 1fr !important;
+    }
+    .user-guide-toc {
+      display: none !important;
+    }
+    .guide-features-grid,
+    .guide-carrier-grid {
+      grid-template-columns: 1fr !important;
+    }
+    .user-guide-hero h1 {
+      font-size: 28px !important;
+    }
+  }
+{%- endstyle -%}
+
+<section class="user-guide">
+  <div class="page-width">
+    <div class="user-guide-layout">
+
+      <!-- Sidebar TOC -->
+      <aside class="user-guide-toc">
+        <div class="user-guide-toc-title">On this page</div>
+        <ul class="user-guide-toc-list">
+          <li class="user-guide-toc-item"><a href="#ug-overview">Overview</a></li>
+          <li class="user-guide-toc-item"><a href="#ug-features">Key Features</a></li>
+          <li class="user-guide-toc-item"><a href="#ug-installation">Installation</a></li>
+          <li class="user-guide-toc-item"><a href="#ug-settings">Settings</a></li>
+          <li class="user-guide-toc-item"><a href="#ug-packages">Package Management</a></li>
+          <li class="user-guide-toc-item"><a href="#ug-ups">UPS Setup</a></li>
+          <li class="user-guide-toc-item"><a href="#ug-usps">USPS Setup</a></li>
+          <li class="user-guide-toc-item"><a href="#ug-fedex">FedEx Setup</a></li>
+          <li class="user-guide-toc-item"><a href="#ug-auspost">Australia Post Setup</a></li>
+          <li class="user-guide-toc-item"><a href="#ug-fulfillment">Order Fulfillment</a></li>
+          <li class="user-guide-toc-item"><a href="#ug-test">Want to Test?</a></li>
+        </ul>
+      </aside>
+
+      <!-- Main Content -->
+      <div class="user-guide-content">
+
+        <!-- Hero -->
+        <div class="user-guide-hero">
+          <div class="user-guide-hero-badge">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+            DimenAI – Official User Guide
+          </div>
+          <h1>DimenAI – Shopify User Guide</h1>
+          <p>Welcome to another innovation by <strong>ESTS (Expound Coderz)</strong>. This guide will help you seamlessly integrate your Shopify store with UPS, USPS, FedEx, and Australia Post — covering real-time rate calculation, 3D bin packing, and shipping label generation.</p>
+        </div>
+
+        <!-- Overview -->
+        <div class="guide-section" id="ug-overview">
+          <div class="guide-section-header">
+            <div class="guide-section-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            </div>
+            <h2 class="guide-section-title">Overview</h2>
+          </div>
+          <div class="guide-section-body">
+            <p>DimenAI is a third-party Shopify application that connects your store to leading shipping carriers. You can calculate real-time rates, generate labels, and track shipments directly within Shopify — ensuring a smooth shipping experience for you and your customers.</p>
+            <p>The app uses your exact box dimensions and AI-powered 3D bin packing to determine the most accurate shipping cost for every order, eliminating overcharges caused by guesswork packaging.</p>
+          </div>
+        </div>
+
+        <!-- Key Features -->
+        <div class="guide-section" id="ug-features">
+          <div class="guide-section-header">
+            <div class="guide-section-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <h2 class="guide-section-title">Key Features</h2>
+          </div>
+          <div class="guide-features-grid">
+            <div class="guide-feature-card">
+              <div class="guide-feature-card-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+              </div>
+              <div>
+                <div class="guide-feature-card-title">Real-time Shipping Rates</div>
+                <p class="guide-feature-card-desc">Automatically fetch rates based on package size, weight, and destination from all connected carriers.</p>
+              </div>
+            </div>
+            <div class="guide-feature-card">
+              <div class="guide-feature-card-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+              </div>
+              <div>
+                <div class="guide-feature-card-title">Multi-Carrier Integration</div>
+                <p class="guide-feature-card-desc">Connect UPS, USPS, FedEx, and Australia Post within one app — no separate installs needed.</p>
+              </div>
+            </div>
+            <div class="guide-feature-card">
+              <div class="guide-feature-card-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              </div>
+              <div>
+                <div class="guide-feature-card-title">Label Generation</div>
+                <p class="guide-feature-card-desc">Create and download shipping labels directly from your Shopify admin without switching tools.</p>
+              </div>
+            </div>
+            <div class="guide-feature-card">
+              <div class="guide-feature-card-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              </div>
+              <div>
+                <div class="guide-feature-card-title">Tracking Support</div>
+                <p class="guide-feature-card-desc">Access tracking numbers and live shipment status updates for every order.</p>
+              </div>
+            </div>
+            <div class="guide-feature-card">
+              <div class="guide-feature-card-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+              </div>
+              <div>
+                <div class="guide-feature-card-title">3D Box Management</div>
+                <p class="guide-feature-card-desc">AI automatically selects the most space-efficient box for every order using 3D bin packing logic.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Installation -->
+        <div class="guide-section" id="ug-installation">
+          <div class="guide-section-header">
+            <div class="guide-section-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            </div>
+            <h2 class="guide-section-title">Installation</h2>
+          </div>
+          <div class="guide-section-body">
+            <p>Install DimenAI directly from the Shopify App Store in a few steps:</p>
+          </div>
+          <div class="guide-steps">
+            <div class="guide-step"><div class="guide-step-left"><div class="guide-step-num">1</div><div class="guide-step-line"></div></div><div class="guide-step-body"><div class="guide-step-title">Log in to your Shopify Admin</div><p class="guide-step-desc">Go to your Shopify Admin dashboard at <strong>yourstore.myshopify.com/admin</strong></p></div></div>
+            <div class="guide-step"><div class="guide-step-left"><div class="guide-step-num">2</div><div class="guide-step-line"></div></div><div class="guide-step-body"><div class="guide-step-title">Open the Shopify App Store</div><p class="guide-step-desc">Search for <strong>"DimenAI"</strong> or <strong>"Dimensional Shipping UPS Auth"</strong> in the App Store.</p></div></div>
+            <div class="guide-step"><div class="guide-step-left"><div class="guide-step-num">3</div><div class="guide-step-line"></div></div><div class="guide-step-body"><div class="guide-step-title">Click "Add app" and follow the prompts</div><p class="guide-step-desc">Review the app permissions and click <strong>Install app</strong> to authorize installation.</p></div></div>
+            <div class="guide-step"><div class="guide-step-left"><div class="guide-step-num">4</div><div class="guide-step-line"></div></div><div class="guide-step-body"><div class="guide-step-title">Select your billing plan</div><p class="guide-step-desc">Approve your preferred billing plan to activate the app. Once done, access it from the <strong>Apps</strong> section of your Shopify Admin.</p></div></div>
+          </div>
+        </div>
+
+        <!-- Settings -->
+        <div class="guide-section" id="ug-settings">
+          <div class="guide-section-header">
+            <div class="guide-section-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/></svg>
+            </div>
+            <h2 class="guide-section-title">Settings</h2>
+          </div>
+          <div class="guide-section-body">
+            <p>Navigate to the <strong>Settings</strong> page inside DimenAI. It contains two important sections:</p>
+          </div>
+          <div class="guide-steps">
+            <div class="guide-step"><div class="guide-step-left"><div class="guide-step-num">1</div><div class="guide-step-line"></div></div><div class="guide-step-body"><div class="guide-step-title">Show Shipping Rates at Checkout</div><p class="guide-step-desc">Click <strong>"Enable Carrier Service"</strong> to register DimenAI as a carrier service. Once enabled, it will appear under <strong>Settings &rarr; Shipping &amp; Delivery</strong> in your Shopify admin.</p></div></div>
+            <div class="guide-step"><div class="guide-step-left"><div class="guide-step-num">2</div></div><div class="guide-step-body"><div class="guide-step-title">Measurement Units</div><p class="guide-step-desc">Choose your preferred unit system — <strong>Metric (cm/kg)</strong> or <strong>Imperial (in/lbs)</strong> — for all package dimension and weight calculations.</p></div></div>
+          </div>
+        </div>
+
+        <!-- Packages -->
+        <div class="guide-section" id="ug-packages">
+          <div class="guide-section-header">
+            <div class="guide-section-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+            </div>
+            <h2 class="guide-section-title">Configure Packages (Boxes)</h2>
+          </div>
+          <div class="guide-section-body">
+            <p>Navigate to the <strong>Order Package</strong> page to manage your box library.</p>
+            <p>You can create a box manually by entering dimensions and weight limits, or upload multiple boxes at once via a <strong>CSV file</strong>. Download the sample CSV format using the "Download Sample CSV" button to ensure your file matches the required structure.</p>
+            <p>You can also add official carrier boxes by clicking <strong>"View Suggestions"</strong> — this opens a popup with pre-configured UPS, USPS, FedEx, and Australia Post packaging options.</p>
+          </div>
+          <div class="guide-note">
+            <svg class="guide-note-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            <span>After boxes are added, you'll see a full list with <strong>Edit</strong> and <strong>Delete</strong> options. The default box cannot be deleted but can be modified.</span>
+          </div>
+        </div>
+
+        <!-- Carrier Setup -->
+        <div class="guide-section" id="ug-ups">
+          <div class="guide-section-header">
+            <div class="guide-section-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+            </div>
+            <h2 class="guide-section-title">Carrier Setup</h2>
+          </div>
+          <div class="guide-section-body">
+            <p>Each carrier has its own setup tab inside DimenAI. Configure them individually using the steps below:</p>
+          </div>
+          <div class="guide-carrier-grid">
+            <!-- UPS -->
+            <div class="guide-carrier-card" id="ug-ups-inner">
+              <div class="guide-carrier-header ups">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/></svg>
+                UPS Setup
+              </div>
+              <div class="guide-carrier-body">
+                <div class="guide-carrier-step"><div class="guide-carrier-dot"></div><span>Navigate to the <strong>UPS</strong> tab in DimenAI.</span></div>
+                <div class="guide-carrier-step"><div class="guide-carrier-dot"></div><span>Under <strong>Connect</strong>, enter your UPS Account Number, Client ID, and Client Secret.</span></div>
+                <div class="guide-carrier-step"><div class="guide-carrier-dot"></div><span>Click <strong>"Create UPS Access Token"</strong> then <strong>"Connect"</strong> to save.</span></div>
+                <div class="guide-carrier-step"><div class="guide-carrier-dot"></div><span>Under <strong>Address</strong>, fill in your shipper details and click <strong>Save</strong>.</span></div>
+                <div class="guide-carrier-step"><div class="guide-carrier-dot"></div><span>In <strong>Settings</strong>, configure App Status, API Mode, Container Type, Destination, and click <strong>Save</strong>.</span></div>
+              </div>
+            </div>
+            <!-- USPS -->
+            <div class="guide-carrier-card" id="ug-usps">
+              <div class="guide-carrier-header usps">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/></svg>
+                USPS Setup
+              </div>
+              <div class="guide-carrier-body">
+                <div class="guide-carrier-step"><div class="guide-carrier-dot"></div><span>Navigate to the <strong>USPS</strong> tab.</span></div>
+                <div class="guide-carrier-step"><div class="guide-carrier-dot"></div><span>Enter your USPS Account No., Client ID, and Client Secret under <strong>Connect</strong>.</span></div>
+                <div class="guide-carrier-step"><div class="guide-carrier-dot"></div><span>Click <strong>"Create USPS Access Token"</strong> then <strong>"Connect"</strong>.</span></div>
+                <div class="guide-carrier-step"><div class="guide-carrier-dot"></div><span>Fill in shipper details under <strong>Address</strong> and click <strong>Save</strong>.</span></div>
+                <div class="guide-carrier-step"><div class="guide-carrier-dot"></div><span>Configure App Status, API Mode, and Handling Fees in <strong>Settings</strong> and click <strong>Save</strong>.</span></div>
+              </div>
+            </div>
+            <!-- FedEx -->
+            <div class="guide-carrier-card" id="ug-fedex">
+              <div class="guide-carrier-header fedex">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/></svg>
+                FedEx Setup
+              </div>
+              <div class="guide-carrier-body">
+                <div class="guide-carrier-step"><div class="guide-carrier-dot"></div><span>Navigate to the <strong>FedEx</strong> tab.</span></div>
+                <div class="guide-carrier-step"><div class="guide-carrier-dot"></div><span>Enter FedEx Account Number, Client ID, and Client Secret under <strong>Connect</strong>.</span></div>
+                <div class="guide-carrier-step"><div class="guide-carrier-dot"></div><span>Click <strong>"Create FedEx Access Token"</strong> then <strong>"Connect"</strong>.</span></div>
+                <div class="guide-carrier-step"><div class="guide-carrier-dot"></div><span>Fill in shipper address under <strong>Address</strong> and click <strong>Save</strong>.</span></div>
+                <div class="guide-carrier-step"><div class="guide-carrier-dot"></div><span>Configure settings and click <strong>Save</strong>. Ensure customer phone number is set to <strong>Required</strong> in Shopify checkout for label creation.</span></div>
+              </div>
+            </div>
+            <!-- Australia Post -->
+            <div class="guide-carrier-card" id="ug-auspost">
+              <div class="guide-carrier-header auspost">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                Australia Post Setup
+              </div>
+              <div class="guide-carrier-body">
+                <div class="guide-carrier-step"><div class="guide-carrier-dot"></div><span>Navigate to the <strong>Australia Post</strong> tab.</span></div>
+                <div class="guide-carrier-step"><div class="guide-carrier-dot"></div><span>Enter your Australia Post Client ID under <strong>Connect</strong> and click <strong>"Connect"</strong>.</span></div>
+                <div class="guide-carrier-step"><div class="guide-carrier-dot"></div><span>In <strong>Settings</strong>, configure App Status, API Mode, and other preferences.</span></div>
+                <div class="guide-carrier-step"><div class="guide-carrier-dot"></div><span>Click <strong>Save</strong>. Australia Post rates will appear at checkout once setup is complete.</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Order Fulfillment -->
+        <div class="guide-section" id="ug-fulfillment">
+          <div class="guide-section-header">
+            <div class="guide-section-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            </div>
+            <h2 class="guide-section-title">Order Fulfillment</h2>
+          </div>
+          <div class="guide-section-body">
+            <p>Once configured, fulfilling orders with DimenAI is a streamlined process. You can access shipments from the <strong>Order Shipment</strong> page inside the app, or directly from the Shopify Order page.</p>
+          </div>
+          <div class="guide-steps">
+            <div class="guide-step"><div class="guide-step-left"><div class="guide-step-num">1</div><div class="guide-step-line"></div></div><div class="guide-step-body"><div class="guide-step-title">Open the order in Shopify</div><p class="guide-step-desc">Navigate to your Shopify Orders page and click the order you want to ship.</p></div></div>
+            <div class="guide-step"><div class="guide-step-left"><div class="guide-step-num">2</div><div class="guide-step-line"></div></div><div class="guide-step-body"><div class="guide-step-title">Click "More Actions" → "Get Shipment"</div><p class="guide-step-desc">This opens the order inside DimenAI where the AI has already packed the items into your configured boxes.</p></div></div>
+            <div class="guide-step"><div class="guide-step-left"><div class="guide-step-num">3</div><div class="guide-step-line"></div></div><div class="guide-step-body"><div class="guide-step-title">Review the packed box and carrier options</div><p class="guide-step-desc">Click <strong>"Get Rates"</strong> to view real-time prices from all connected carriers for this specific shipment.</p></div></div>
+            <div class="guide-step"><div class="guide-step-left"><div class="guide-step-num">4</div><div class="guide-step-line"></div></div><div class="guide-step-body"><div class="guide-step-title">Select a carrier and create the label</div><p class="guide-step-desc">Choose your preferred service and click <strong>"Create Shipping Label."</strong> Your label will be generated along with a tracking number instantly.</p></div></div>
+          </div>
+          <div class="guide-warning">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px;"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            <span>For FedEx label creation, ensure the <strong>customer phone number</strong> field is set to <strong>Required</strong> in your Shopify checkout settings.</span>
+          </div>
+        </div>
+
+        <!-- Want to Test CTA -->
+        <div class="guide-test-cta" id="ug-test">
+          <h3>Want to Test DimenAI First?</h3>
+          <p>Not sure if DimenAI is the right fit for your store? Get in touch with our team — we'll set up a live demo or testing environment tailored to your shipping needs.</p>
+          <div class="guide-test-cta-buttons">
+            <a href="https://expoundcoderz.com/contact" class="guide-cta-btn-primary">
+              Contact Us to Test <span>→</span>
+            </a>
+            <a href="https://apps.shopify.com/estsshipping" class="guide-cta-btn-secondary">
+              Install DimenAI Free
+            </a>
+          </div>
+        </div>
+
+      </div><!-- end content -->
+    </div><!-- end layout -->
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "User Guide",
+  "tag": "section",
+  "class": "section",
+  "settings": [],
+  "presets": [
+    {
+      "name": "User Guide"
+    }
+  ]
+}
+{% endschema %}

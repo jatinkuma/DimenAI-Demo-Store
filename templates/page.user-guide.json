@@ -1,0 +1,11 @@
+{
+  "sections": {
+    "user_guide": {
+      "type": "saas-user-guide",
+      "settings": {}
+    }
+  },
+  "order": [
+    "user_guide"
+  ]
+}
