@@ -1,0 +1,184 @@
+{%- style -%}
+  .saas-carriers {
+    padding: 32px 0 !important;
+    background: #ffffff !important;
+    border-top: 1px solid #f1f5f9 !important;
+    border-bottom: 1px solid #f1f5f9 !important;
+  }
+
+  .saas-carriers-inner {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 0 !important;
+    flex-wrap: wrap !important;
+  }
+
+  .saas-carriers-label {
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    color: #94a3b8 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.08em !important;
+    margin-right: 32px !important;
+    white-space: nowrap !important;
+  }
+
+  .saas-carrier-divider {
+    width: 1px !important;
+    height: 32px !important;
+    background: #e2e8f0 !important;
+    margin: 0 28px !important;
+  }
+
+  .saas-carrier-item {
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    padding: 10px 20px !important;
+    border-radius: 12px !important;
+    transition: background 0.2s ease !important;
+  }
+
+  .saas-carrier-item:hover {
+    background: #f8faf8 !important;
+  }
+
+  .saas-carrier-logo {
+    font-size: 15px !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.02em !important;
+    white-space: nowrap !important;
+  }
+
+  .carrier-ups { color: #351C15 !important; }
+  .carrier-fedex-fed { color: #4D148C !important; }
+  .carrier-fedex-ex { color: #FF6600 !important; }
+  .carrier-usps { color: #004B87 !important; }
+  .carrier-auspost { color: #DC1928 !important; }
+
+  .saas-carrier-badge {
+    font-size: 11px !important;
+    font-weight: 600 !important;
+    color: #64748b !important;
+    background: #f1f5f9 !important;
+    padding: 3px 8px !important;
+    border-radius: 6px !important;
+  }
+
+  .saas-stats-strip {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 48px !important;
+    margin-top: 28px !important;
+    padding-top: 24px !important;
+    border-top: 1px solid #f1f5f9 !important;
+    flex-wrap: wrap !important;
+  }
+
+  .saas-stat-item {
+    text-align: center !important;
+  }
+
+  .saas-stat-number {
+    font-size: 28px !important;
+    font-weight: 800 !important;
+    color: var(--color-brand-1, #2d5a27) !important;
+    letter-spacing: -0.03em !important;
+    line-height: 1 !important;
+    display: block !important;
+  }
+
+  .saas-stat-label {
+    font-size: 13px !important;
+    color: #64748b !important;
+    font-weight: 500 !important;
+    margin-top: 4px !important;
+    display: block !important;
+  }
+
+  @media screen and (max-width: 749px) {
+    .saas-carriers-label {
+      width: 100% !important;
+      text-align: center !important;
+      margin-right: 0 !important;
+      margin-bottom: 16px !important;
+    }
+    .saas-carrier-divider {
+      display: none !important;
+    }
+    .saas-stats-strip {
+      gap: 28px !important;
+    }
+  }
+{%- endstyle -%}
+
+<section class="saas-carriers">
+  <div class="page-width">
+    <div class="saas-carriers-inner">
+      <span class="saas-carriers-label">Works with</span>
+
+      <div class="saas-carrier-item">
+        <span class="saas-carrier-logo carrier-ups">UPS</span>
+        <span class="saas-carrier-badge">Ground · Express · Saver</span>
+      </div>
+
+      <div class="saas-carrier-divider"></div>
+
+      <div class="saas-carrier-item">
+        <span class="saas-carrier-logo">
+          <span class="carrier-fedex-fed">Fed</span><span class="carrier-fedex-ex">Ex</span>
+        </span>
+        <span class="saas-carrier-badge">Ground · Express · International</span>
+      </div>
+
+      <div class="saas-carrier-divider"></div>
+
+      <div class="saas-carrier-item">
+        <span class="saas-carrier-logo carrier-usps">USPS</span>
+        <span class="saas-carrier-badge">Priority · First Class · Ground</span>
+      </div>
+
+      <div class="saas-carrier-divider"></div>
+
+      <div class="saas-carrier-item">
+        <span class="saas-carrier-logo carrier-auspost">Australia Post</span>
+        <span class="saas-carrier-badge">Express · Parcel · Satchel</span>
+      </div>
+    </div>
+
+    <div class="saas-stats-strip">
+      <div class="saas-stat-item">
+        <span class="saas-stat-number">4</span>
+        <span class="saas-stat-label">Major Carriers</span>
+      </div>
+      <div class="saas-stat-item">
+        <span class="saas-stat-number">3D</span>
+        <span class="saas-stat-label">AI Bin Packing</span>
+      </div>
+      <div class="saas-stat-item">
+        <span class="saas-stat-number">100%</span>
+        <span class="saas-stat-label">Real-Time Rates</span>
+      </div>
+      <div class="saas-stat-item">
+        <span class="saas-stat-number">Free</span>
+        <span class="saas-stat-label">To Get Started</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Carriers Strip",
+  "tag": "section",
+  "class": "section",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Carriers Strip"
+    }
+  ]
+}
+{% endschema %}

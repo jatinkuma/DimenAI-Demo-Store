@@ -230,31 +230,96 @@
         </div>
       {%- else -%}
         <div class="hero-image-container">
-          <div class="hero-image-card" style="padding: 40px; background: linear-gradient(135deg, #ffffff, #f0f4f0); aspect-ratio: 1/1; display: flex; align-items: center; justify-content: center;">
-            <div style="text-align: center;">
-                <div style="width: 120px; height: 120px; background: #ffffff; border-radius: 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); margin: 0 auto 30px; display: flex; align-items: center; justify-content: center; border: 1px solid #e2e8e2;">
-                    <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#2d5a27" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+          <!-- Hero Mock UI: live checkout rates card -->
+          <div class="hero-image-card" style="padding: 28px; background: #ffffff;">
+            <!-- App Header -->
+            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px solid #f1f5f9;">
+              <div style="width: 36px; height: 36px; background: #f0f4f0; border-radius: 10px; display: flex; align-items: center; justify-content: center;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2d5a27" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg>
+              </div>
+              <div>
+                <div style="font-weight: 800; font-size: 14px; color: #1e291e;">DimenAI</div>
+                <div style="font-size: 11px; color: #64748b;">Shipping Rates</div>
+              </div>
+              <div style="margin-left: auto; background: #f0fdf0; color: #16a34a; font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 20px; border: 1px solid #bbf7d0;">● Live</div>
+            </div>
+
+            <!-- Checkout rates -->
+            <div style="font-size: 13px; font-weight: 700; color: #1e291e; margin-bottom: 12px;">Shipping Method</div>
+
+            <!-- Rate 1 selected -->
+            <div style="padding: 12px 14px; border: 2px solid #2d5a27; border-radius: 12px; display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; background: #f8faf8;">
+              <div style="display: flex; align-items: center; gap: 10px;">
+                <div style="width: 16px; height: 16px; background: #2d5a27; border-radius: 50%; flex-shrink: 0;"></div>
+                <div>
+                  <div style="font-size: 13px; font-weight: 700; color: #1e291e;">UPS® Ground</div>
+                  <div style="font-size: 11px; color: #64748b;">3–5 business days</div>
                 </div>
-                <div style="font-weight: 800; font-size: 24px; color: #1e291e; margin-bottom: 10px;">DimenAI</div>
-                <div style="font-size: 14px; color: #4a5a4a; max-width: 200px; margin: 0 auto;">Smart Shipping & Box Intelligence</div>
+              </div>
+              <div style="font-weight: 800; font-size: 15px; color: #2d5a27;">$12.40</div>
+            </div>
+
+            <!-- Rate 2 -->
+            <div style="padding: 12px 14px; border: 1.5px solid #f1f5f9; border-radius: 12px; display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+              <div style="display: flex; align-items: center; gap: 10px;">
+                <div style="width: 16px; height: 16px; border: 2px solid #e2e8f0; border-radius: 50%; flex-shrink: 0;"></div>
+                <div>
+                  <div style="font-size: 13px; font-weight: 600; color: #1e291e;">USPS Priority Mail</div>
+                  <div style="font-size: 11px; color: #64748b;">1–3 business days</div>
+                </div>
+              </div>
+              <div style="font-weight: 700; font-size: 14px; color: #475569;">$8.90</div>
+            </div>
+
+            <!-- Rate 3 -->
+            <div style="padding: 12px 14px; border: 1.5px solid #f1f5f9; border-radius: 12px; display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+              <div style="display: flex; align-items: center; gap: 10px;">
+                <div style="width: 16px; height: 16px; border: 2px solid #e2e8f0; border-radius: 50%; flex-shrink: 0;"></div>
+                <div>
+                  <div style="font-size: 13px; font-weight: 600; color: #1e291e;">FedEx 2Day®</div>
+                  <div style="font-size: 11px; color: #64748b;">2 business days</div>
+                </div>
+              </div>
+              <div style="font-weight: 700; font-size: 14px; color: #475569;">$24.60</div>
+            </div>
+
+            <!-- Rate 4 -->
+            <div style="padding: 12px 14px; border: 1.5px solid #f1f5f9; border-radius: 12px; display: flex; justify-content: space-between; align-items: center;">
+              <div style="display: flex; align-items: center; gap: 10px;">
+                <div style="width: 16px; height: 16px; border: 2px solid #e2e8f0; border-radius: 50%; flex-shrink: 0;"></div>
+                <div>
+                  <div style="font-size: 13px; font-weight: 600; color: #1e291e;">Aus Post eParcel</div>
+                  <div style="font-size: 11px; color: #64748b;">5–8 business days</div>
+                </div>
+              </div>
+              <div style="font-weight: 700; font-size: 14px; color: #475569;">$18.20</div>
+            </div>
+
+            <!-- Packing badge -->
+            <div style="margin-top: 16px; padding: 10px 14px; background: #f0fdf0; border-radius: 10px; display: flex; align-items: center; gap: 8px; border: 1px solid #bbf7d0;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg>
+              <span style="font-size: 12px; font-weight: 600; color: #15803d;">AI packed into 1 box · 94% space efficiency</span>
             </div>
           </div>
-           <div class="floating-element floating-1">
-            <div style="width: 32px; height: 32px; background: #f0f4f0; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #2d5a27;">
+
+          <!-- Floating badges -->
+          <div class="floating-element floating-1">
+            <div style="width: 32px; height: 32px; background: #f0f4f0; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #2d5a27; flex-shrink: 0;">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
             </div>
             <div>
-              <div style="font-weight: 700; font-size: 14px; color: #1e291e;">Accurate Rates</div>
-              <div style="font-size: 12px; color: #4a5a4a;">Real-time sync</div>
+              <div style="font-weight: 700; font-size: 13px; color: #1e291e;">Label Purchased</div>
+              <div style="font-size: 11px; color: #4a5a4a;">Without leaving the app</div>
             </div>
           </div>
+
           <div class="floating-element floating-2">
-             <div style="width: 32px; height: 32px; background: #f0f4f0; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #2d5a27;">
+            <div style="width: 32px; height: 32px; background: #f0f4f0; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #2d5a27; flex-shrink: 0;">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
             </div>
             <div>
-              <div style="font-weight: 700; font-size: 14px; color: #1e291e;">Smart Packing</div>
-              <div style="font-size: 12px; color: #4a5a4a;">AI 3D Logic</div>
+              <div style="font-weight: 700; font-size: 13px; color: #1e291e;">3D Packed</div>
+              <div style="font-size: 11px; color: #4a5a4a;">Optimal box selected</div>
             </div>
           </div>
         </div>
