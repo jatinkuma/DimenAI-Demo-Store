@@ -23,15 +23,15 @@
     left: 50% !important;
     transform: translateX(-50%) !important;
     width: auto !important;
-    min-width: 720px;
-    max-width: 95vw;
+    min-width: 900px;
+    max-width: 96vw;
     background: var(--glass-bg) !important;
     backdrop-filter: var(--glass-blur) !important;
     border: 1px solid var(--glass-border) !important;
     border-radius: var(--radius-pill) !important;
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.04) !important;
     z-index: 2000 !important;
-    padding: 6px 12px !important;
+    padding: 6px 16px !important;
     transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
   }
 
@@ -79,7 +79,7 @@
     color: var(--text-secondary) !important;
     font-size: 14px !important;
     font-weight: 500 !important;
-    padding: 10px 16px !important;
+    padding: 10px 14px !important;
     text-decoration: none !important;
     border-radius: var(--radius-pill) !important;
     transition: all 0.2s ease !important;
@@ -95,8 +95,9 @@
   .header__actions {
     padding-right: 6px !important;
     display: flex !important;
-    gap: 12px !important;
+    gap: 8px !important;
     align-items: center !important;
+    flex-shrink: 0 !important;
   }
 
   .header__contact-btn {
@@ -104,10 +105,11 @@
     font-size: 14px !important;
     font-weight: 600 !important;
     text-decoration: none !important;
-    padding: 10px 20px !important;
+    padding: 10px 16px !important;
     border-radius: var(--radius-pill) !important;
     transition: all 0.3s ease !important;
     border: 1px solid transparent !important;
+    white-space: nowrap !important;
   }
 
   .header__contact-btn:hover {
